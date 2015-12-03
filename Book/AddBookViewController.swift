@@ -7,12 +7,24 @@
 //
 
 import UIKit
+import CoreData
 
 class AddBookViewController: UIViewController {
 
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var authorTextField: UITextField!
+    @IBOutlet weak var pagesTextField: UITextField!
+    @IBOutlet weak var notesTextField: UITextField!
+    @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
+    
+    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +33,12 @@ class AddBookViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addBookManually(sender: UIButton) {
+        Book.addBook(titleTextField.text!, withISBN: "No ISBN Found", numPages: Int(pagesTextField.text!)!, withPriority: String(prioritySegmentedControl.selectedSegmentIndex), because: notesTextField.text!, withCategory: "Test", writtenBy: authorTextField.text!, withContext: managedObjectContext!)
+    
+        }
+    
+
 
     /*
     // MARK: - Navigation
