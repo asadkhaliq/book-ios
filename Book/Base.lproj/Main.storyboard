@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gGG-2F-vT0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gGG-2F-vT0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -93,7 +93,7 @@
         <!--Library-->
         <scene sceneID="9hW-53-kJ6">
             <objects>
-                <tableViewController id="12i-8U-WRl" customClass="BookLibraryTableViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="libraryList1" id="12i-8U-WRl" customClass="BookLibraryTableViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="usI-lh-5Tq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -138,7 +138,95 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiD-iy-7Sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1702" y="894"/>
+            <point key="canvasLocation" x="1649" y="1420"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="eT3-df-9wL">
+            <objects>
+                <viewController id="Drd-04-scR" customClass="LibrarySwitchViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="muG-IC-5xI"/>
+                        <viewControllerLayoutGuide type="bottom" id="L5o-ho-GUA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nas-dn-ypi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Olk-rz-E3w">
+                                <rect key="frame" x="260" y="28" width="81" height="29"/>
+                                <segments>
+                                    <segment title="List"/>
+                                    <segment title="Grid"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchViewType:" destination="Drd-04-scR" eventType="valueChanged" id="Xkw-bw-WCQ"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3F-cr-jvH">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l3F-cr-jvH" firstAttribute="top" secondItem="Olk-rz-E3w" secondAttribute="bottom" constant="8" symbolic="YES" id="CYg-Ui-86P"/>
+                            <constraint firstItem="l3F-cr-jvH" firstAttribute="bottom" secondItem="L5o-ho-GUA" secondAttribute="top" id="HYK-W4-ZrC"/>
+                            <constraint firstItem="l3F-cr-jvH" firstAttribute="leading" secondItem="Nas-dn-ypi" secondAttribute="leading" id="LnM-B4-BKe"/>
+                            <constraint firstItem="Olk-rz-E3w" firstAttribute="centerX" secondItem="Nas-dn-ypi" secondAttribute="centerX" id="kzS-mz-61A"/>
+                            <constraint firstItem="Olk-rz-E3w" firstAttribute="top" secondItem="muG-IC-5xI" secondAttribute="bottom" constant="8" symbolic="YES" id="rjD-7Q-5n3"/>
+                            <constraint firstItem="l3F-cr-jvH" firstAttribute="centerX" secondItem="Olk-rz-E3w" secondAttribute="centerX" id="ryK-mS-qrn"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="BbI-sd-mkO"/>
+                    <connections>
+                        <outlet property="containerView" destination="l3F-cr-jvH" id="lwg-LP-6cb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6yM-IS-Qc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1649" y="2112"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="eco-Ak-dSg">
+            <objects>
+                <collectionViewController storyboardIdentifier="libraryGrid" id="cCV-v2-PCN" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EDa-l9-gvk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aib-vC-Ird">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAHAHHAHAHAHHAHAHAHHAHAHAHAHHAHAHAHAHHAHAHHAHAHAHAHHAHAHAHA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oVW-ey-86p">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="q2h-lJ-Jqr">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="cCV-v2-PCN" id="pfq-je-GFi"/>
+                            <outlet property="delegate" destination="cCV-v2-PCN" id="6ub-oC-9fN"/>
+                        </connections>
+                    </collectionView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="487"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MFV-aP-Rrr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2435" y="2582"/>
         </scene>
         <!--Profile and Settings-->
         <scene sceneID="QQC-wT-a7V">
@@ -564,8 +652,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="Cab-ui-jQU" kind="relationship" relationship="viewControllers" id="ihm-8F-wYK"/>
-                        <segue destination="12i-8U-WRl" kind="relationship" relationship="viewControllers" id="iHc-BS-2eO"/>
                         <segue destination="nML-34-ka7" kind="relationship" relationship="viewControllers" id="TSQ-bV-50h"/>
+                        <segue destination="Drd-04-scR" kind="relationship" relationship="viewControllers" id="s9X-xR-hWo"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFl-Pe-DTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
