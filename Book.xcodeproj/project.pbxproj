@@ -21,6 +21,7 @@
 		C30934631C07672D005A6263 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934621C07672D005A6263 /* AddBookViewController.swift */; };
 		C30934651C07674F005A6263 /* BookSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934641C07674F005A6263 /* BookSearchTableViewController.swift */; };
 		C30934671C076909005A6263 /* BookLibraryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */; };
+		C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		C30934621C07672D005A6263 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		C30934641C07674F005A6263 /* BookSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchTableViewController.swift; sourceTree = "<group>"; };
 		C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLibraryCollectionViewController.swift; sourceTree = "<group>"; };
+		C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLibraryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				2E808A241C0B5274001BC5D3 /* Author.swift */,
 				C309344D1C0762E1005A6263 /* AppDelegate.swift */,
 				C30934511C0762E1005A6263 /* Main.storyboard */,
+				C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */,
 				C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */,
 				C30934641C07674F005A6263 /* BookSearchTableViewController.swift */,
 				C30934621C07672D005A6263 /* AddBookViewController.swift */,
@@ -168,6 +171,7 @@
 				2E808A271C0B5274001BC5D3 /* Category+CoreDataProperties.swift in Sources */,
 				C30934671C076909005A6263 /* BookLibraryCollectionViewController.swift in Sources */,
 				C30934561C0762E1005A6263 /* Book.xcdatamodeld in Sources */,
+				C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */,
 				2E808A2A1C0B5274001BC5D3 /* Author.swift in Sources */,
 				C30934631C07672D005A6263 /* AddBookViewController.swift in Sources */,
 				C30934651C07674F005A6263 /* BookSearchTableViewController.swift in Sources */,
