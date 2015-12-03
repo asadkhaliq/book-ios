@@ -22,6 +22,12 @@
 		C30934651C07674F005A6263 /* BookSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934641C07674F005A6263 /* BookSearchTableViewController.swift */; };
 		C30934671C076909005A6263 /* BookLibraryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */; };
 		C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */; };
+		C35E70631C10945F00798705 /* SettingsChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E70621C10945F00798705 /* SettingsChooseLocationViewController.swift */; };
+		C365790E1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365790D1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift */; };
+		C36579101C109DED004E6E2F /* SettingsEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */; };
+		C3CD6D411C10902C00F714C6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD6D401C10902C00F714C6 /* SettingsTableViewController.swift */; };
+		C3CD6D541C1092AA00F714C6 /* User Female-100.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CD6D531C1092AA00F714C6 /* User Female-100.png */; };
+		C3CD6D571C10933A00F714C6 /* Literature-100.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CD6D561C10933A00F714C6 /* Literature-100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		C30934641C07674F005A6263 /* BookSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchTableViewController.swift; sourceTree = "<group>"; };
 		C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLibraryCollectionViewController.swift; sourceTree = "<group>"; };
 		C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLibraryTableViewController.swift; sourceTree = "<group>"; };
+		C35E70621C10945F00798705 /* SettingsChooseLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsChooseLocationViewController.swift; sourceTree = "<group>"; };
+		C365790D1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMediaPlayerViewController.swift; sourceTree = "<group>"; };
+		C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEditProfileViewController.swift; sourceTree = "<group>"; };
+		C3CD6D401C10902C00F714C6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		C3CD6D531C1092AA00F714C6 /* User Female-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User Female-100.png"; sourceTree = "<group>"; };
+		C3CD6D561C10933A00F714C6 /* Literature-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Literature-100.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +86,7 @@
 		C309344C1C0762E1005A6263 /* Book */ = {
 			isa = PBXGroup;
 			children = (
+				C3CD6D551C1092AC00F714C6 /* Image Assets */,
 				2E808A1F1C0B5274001BC5D3 /* Book+CoreDataProperties.swift */,
 				2E808A201C0B5274001BC5D3 /* Book.swift */,
 				2E808A211C0B5274001BC5D3 /* Category+CoreDataProperties.swift */,
@@ -82,6 +95,10 @@
 				2E808A241C0B5274001BC5D3 /* Author.swift */,
 				C309344D1C0762E1005A6263 /* AppDelegate.swift */,
 				C30934511C0762E1005A6263 /* Main.storyboard */,
+				C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */,
+				C365790D1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift */,
+				C35E70621C10945F00798705 /* SettingsChooseLocationViewController.swift */,
+				C3CD6D401C10902C00F714C6 /* SettingsTableViewController.swift */,
 				C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */,
 				C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */,
 				C30934641C07674F005A6263 /* BookSearchTableViewController.swift */,
@@ -92,6 +109,15 @@
 				C30934541C0762E1005A6263 /* Book.xcdatamodeld */,
 			);
 			path = Book;
+			sourceTree = "<group>";
+		};
+		C3CD6D551C1092AC00F714C6 /* Image Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C3CD6D561C10933A00F714C6 /* Literature-100.png */,
+				C3CD6D531C1092AA00F714C6 /* User Female-100.png */,
+			);
+			name = "Image Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +152,7 @@
 				TargetAttributes = {
 					C30934491C0762E1005A6263 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = KDS74D59Z7;
 					};
 				};
 			};
@@ -153,7 +180,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C309345B1C0762E1005A6263 /* LaunchScreen.storyboard in Resources */,
+				C3CD6D541C1092AA00F714C6 /* User Female-100.png in Resources */,
 				C30934581C0762E1005A6263 /* Assets.xcassets in Resources */,
+				C3CD6D571C10933A00F714C6 /* Literature-100.png in Resources */,
 				C30934531C0762E1005A6263 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,12 +195,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E808A261C0B5274001BC5D3 /* Book.swift in Sources */,
+				C3CD6D411C10902C00F714C6 /* SettingsTableViewController.swift in Sources */,
 				2E808A291C0B5274001BC5D3 /* Author+CoreDataProperties.swift in Sources */,
 				2E808A281C0B5274001BC5D3 /* Category.swift in Sources */,
 				2E808A271C0B5274001BC5D3 /* Category+CoreDataProperties.swift in Sources */,
+				C35E70631C10945F00798705 /* SettingsChooseLocationViewController.swift in Sources */,
 				C30934671C076909005A6263 /* BookLibraryCollectionViewController.swift in Sources */,
 				C30934561C0762E1005A6263 /* Book.xcdatamodeld in Sources */,
 				C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */,
+				C36579101C109DED004E6E2F /* SettingsEditProfileViewController.swift in Sources */,
+				C365790E1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift in Sources */,
 				2E808A2A1C0B5274001BC5D3 /* Author.swift in Sources */,
 				C30934631C07672D005A6263 /* AddBookViewController.swift in Sources */,
 				C30934651C07674F005A6263 /* BookSearchTableViewController.swift in Sources */,
@@ -289,10 +322,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Book/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.akhaliq.Book;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -300,10 +336,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Book/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.akhaliq.Book;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
