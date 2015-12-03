@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E4C7AA61C10D75A00651F0F /* LibrarySwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C7AA51C10D75A00651F0F /* LibrarySwitchViewController.swift */; };
 		2E808A251C0B5274001BC5D3 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A1F1C0B5274001BC5D3 /* Book+CoreDataProperties.swift */; };
 		2E808A261C0B5274001BC5D3 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A201C0B5274001BC5D3 /* Book.swift */; };
 		2E808A271C0B5274001BC5D3 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A211C0B5274001BC5D3 /* Category+CoreDataProperties.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E4C7AA51C10D75A00651F0F /* LibrarySwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySwitchViewController.swift; sourceTree = "<group>"; };
 		2E808A1F1C0B5274001BC5D3 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2E808A201C0B5274001BC5D3 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		2E808A211C0B5274001BC5D3 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				2E808A241C0B5274001BC5D3 /* Author.swift */,
 				C309344D1C0762E1005A6263 /* AppDelegate.swift */,
 				C30934511C0762E1005A6263 /* Main.storyboard */,
+				2E4C7AA51C10D75A00651F0F /* LibrarySwitchViewController.swift */,
 				C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */,
 				C365790D1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift */,
 				C35E70621C10945F00798705 /* SettingsChooseLocationViewController.swift */,
@@ -205,6 +208,7 @@
 				C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */,
 				C36579101C109DED004E6E2F /* SettingsEditProfileViewController.swift in Sources */,
 				C365790E1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift in Sources */,
+				2E4C7AA61C10D75A00651F0F /* LibrarySwitchViewController.swift in Sources */,
 				2E808A2A1C0B5274001BC5D3 /* Author.swift in Sources */,
 				C30934631C07672D005A6263 /* AddBookViewController.swift in Sources */,
 				C30934651C07674F005A6263 /* BookSearchTableViewController.swift in Sources */,
