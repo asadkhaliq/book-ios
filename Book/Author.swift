@@ -27,3 +27,5 @@ class Author: NSManagedObject {
     }
 
 }
+
+// m author
