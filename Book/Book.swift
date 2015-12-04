@@ -12,13 +12,14 @@ import CoreData
 
 class Book: NSManagedObject {
     
-    class func addBook(title: String, withISBN isbn: String?, numPages pages: Int, withPriority priority: String, because reason: String, withCategory category: String, writtenBy author: String, withContext context: NSManagedObjectContext) -> Book? {
+    class func addBook(title: String, withCover coverPhoto: String, withISBN isbn: String?, numPages pages: Int, withPriority priority: String, because reason: String, withCategory category: String, writtenBy author: String, withContext context: NSManagedObjectContext) -> Book? {
         
         if let book = NSEntityDescription.insertNewObjectForEntityForName("Book", inManagedObjectContext: context) as? Book {
             book.title = title
             book.pages = NSNumber(integer: pages)
             book.isbn = isbn == nil ? nil : isbn!
             book.reason = reason
+            book.coverUrl = coverPhoto
             book.dateAdded = NSDate()
             book.completedItM8 = false
             book.dateStarted = nil
@@ -26,7 +27,15 @@ class Book: NSManagedObject {
             book.dateCompleted = nil
             book.category = Category.getCategoryFromString(category, context: context)
             book.author = Author.getAuthorFromString(author, context: context)
-            return book
+            
+            do {
+                try context.save()
+                return book
+            } catch let error {
+                print("Core Data Error: \(error)")
+            }
+            
+            
         }
         
         return nil
@@ -40,6 +49,18 @@ class Book: NSManagedObject {
             return books
         } else {
             return []
+        }
+    }
+    
+    class func deleteAllBooks(context: NSManagedObjectContext) {
+        let fetchRequest = NSFetchRequest(entityName: "Book")
+        
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try context.executeRequest(deleteRequest)
+        } catch let error as NSError {
+            print("Core Data Error, could not delete because: \(error)")
         }
     }
 

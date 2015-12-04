@@ -6,6 +6,7 @@
     </entity>
     <entity name="Book" representedClassName=".Book" syncable="YES">
         <attribute name="completedItM8" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="coverUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currentPage" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="dateAdded" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateCompleted" optional="YES" attributeType="Date" syncable="YES"/>
@@ -23,8 +24,8 @@
         <relationship name="books" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Book" inverseName="category" inverseEntity="Book" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Book" positionX="-72" positionY="333" width="128" height="223"/>
         <element name="Author" positionX="216" positionY="584" width="128" height="73"/>
+        <element name="Book" positionX="-72" positionY="333" width="128" height="240"/>
         <element name="Category" positionX="243" positionY="144" width="128" height="73"/>
     </elements>
 </model>

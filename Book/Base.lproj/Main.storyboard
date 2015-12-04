@@ -395,6 +395,30 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Your data" id="lHJ-JR-7RD">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="90" id="hmi-GW-2uT">
+                                        <rect key="frame" x="0.0" y="472" width="600" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hmi-GW-2uT" id="aOx-66-jOg">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="89.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyC-QY-hd4">
+                                                    <rect key="frame" x="8" y="30" width="98" height="30"/>
+                                                    <state key="normal" title="Delete all data"/>
+                                                    <connections>
+                                                        <action selector="deleteAllBooks:" destination="u4q-T9-Rhk" eventType="touchUpInside" id="ZtN-8b-tkI"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES"/>
+                                        </accessibility>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="u4q-T9-Rhk" id="aLi-ZZ-clc"/>

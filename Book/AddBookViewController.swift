@@ -34,7 +34,7 @@ class AddBookViewController: UIViewController {
     }
     
     @IBAction func addBookManually(sender: UIButton) {
-        Book.addBook(titleTextField.text!, withISBN: "No ISBN Found", numPages: Int(pagesTextField.text!)!, withPriority: String(prioritySegmentedControl.selectedSegmentIndex), because: notesTextField.text!, withCategory: "Test", writtenBy: authorTextField.text!, withContext: managedObjectContext!)
+        Book.addBook(titleTextField.text!, withCover: "http://craigmod.com/images/journal/coccyx/aba-04.png", withISBN: "No ISBN Found", numPages: Int(pagesTextField.text!)!, withPriority: String(prioritySegmentedControl.selectedSegmentIndex), because: notesTextField.text!, withCategory: "Test", writtenBy: authorTextField.text!, withContext: managedObjectContext!)
     
         }
     
