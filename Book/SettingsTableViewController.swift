@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class SettingsTableViewController: UITableViewController {
-
+    
+    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,5 +23,8 @@ class SettingsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    @IBAction func deleteAllBooks(sender: UIButton) {
+        Book.deleteAllBooks(managedObjectContext!)
+    }
     
 }
