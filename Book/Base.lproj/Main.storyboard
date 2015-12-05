@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gGG-2F-vT0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gGG-2F-vT0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -154,6 +154,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Olk-rz-E3w">
                                 <rect key="frame" x="260" y="28" width="81" height="29"/>
+                                <animations/>
                                 <segments>
                                     <segment title="List"/>
                                     <segment title="Grid"/>
@@ -164,8 +165,10 @@
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3F-cr-jvH">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
                             </containerView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="l3F-cr-jvH" firstAttribute="top" secondItem="Olk-rz-E3w" secondAttribute="bottom" constant="8" symbolic="YES" id="CYg-Ui-86P"/>
@@ -192,6 +195,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="EDa-l9-gvk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aib-vC-Ird">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -201,6 +205,7 @@
                         <label key="backgroundView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HAHAHHAHAHAHHAHAHAHHAHAHAHAHHAHAHAHAHHAHAHHAHAHAHAHHAHAHAHA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oVW-ey-86p">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -212,8 +217,10 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <animations/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -406,13 +413,16 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyC-QY-hd4">
                                                     <rect key="frame" x="8" y="30" width="98" height="30"/>
+                                                    <animations/>
                                                     <state key="normal" title="Delete all data"/>
                                                     <connections>
                                                         <action selector="deleteAllBooks:" destination="u4q-T9-Rhk" eventType="touchUpInside" id="ZtN-8b-tkI"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <animations/>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -581,9 +591,47 @@
                     <view key="view" contentMode="scaleToFill" id="5Or-9a-sfC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tgh-ad-KE1">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <animations/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Y8p-Hg-kYS">
+                                <rect key="frame" x="20" y="123" width="560" height="2"/>
+                                <animations/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QnI-F0-fra">
+                                <rect key="frame" x="250" y="166" width="100" height="100"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="zK0-C5-5Wc"/>
+                                </constraints>
+                                <state key="normal" image="playIcon.png"/>
+                                <connections>
+                                    <action selector="pressedPlayPauseButton:" destination="Caa-J7-jd1" eventType="touchUpInside" id="B0O-TV-Wvj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QnI-F0-fra" firstAttribute="top" secondItem="Y8p-Hg-kYS" secondAttribute="bottom" constant="41" id="59V-uu-49D"/>
+                            <constraint firstItem="Y8p-Hg-kYS" firstAttribute="top" secondItem="Igu-E4-Pd8" secondAttribute="bottom" constant="59" id="5bR-Cf-Ifr"/>
+                            <constraint firstItem="QnI-F0-fra" firstAttribute="centerX" secondItem="tgh-ad-KE1" secondAttribute="centerX" id="9mb-B9-Dii"/>
+                            <constraint firstItem="tgh-ad-KE1" firstAttribute="leading" secondItem="5Or-9a-sfC" secondAttribute="leading" id="FtB-W1-jcr"/>
+                            <constraint firstItem="tgh-ad-KE1" firstAttribute="top" secondItem="Igu-E4-Pd8" secondAttribute="bottom" id="KXA-JU-jEh"/>
+                            <constraint firstItem="zLD-9D-mIa" firstAttribute="top" secondItem="QnI-F0-fra" secondAttribute="bottom" constant="285" id="PUt-bg-IZz"/>
+                            <constraint firstAttribute="trailing" secondItem="tgh-ad-KE1" secondAttribute="trailing" id="UHr-96-DtG"/>
+                            <constraint firstItem="Y8p-Hg-kYS" firstAttribute="leading" secondItem="5Or-9a-sfC" secondAttribute="leadingMargin" id="jLR-ii-9RT"/>
+                            <constraint firstItem="tgh-ad-KE1" firstAttribute="bottom" secondItem="zLD-9D-mIa" secondAttribute="top" id="t6z-iy-1HC"/>
+                            <constraint firstItem="Y8p-Hg-kYS" firstAttribute="centerX" secondItem="QnI-F0-fra" secondAttribute="centerX" id="whn-xD-udy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="tgh-ad-KE1" id="ZWb-0h-s1K"/>
+                        <outlet property="playPauseButton" destination="QnI-F0-fra" id="xBd-sl-zbS"/>
+                        <outlet property="progressView" destination="Y8p-Hg-kYS" id="r8b-vZ-GmK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jr-y9-kpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -728,5 +776,6 @@
     <resources>
         <image name="Literature-100.png" width="100" height="100"/>
         <image name="User Female-100.png" width="100" height="100"/>
+        <image name="playIcon.png" width="25" height="25"/>
     </resources>
 </document>
