@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2E4C7AA61C10D75A00651F0F /* LibrarySwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C7AA51C10D75A00651F0F /* LibrarySwitchViewController.swift */; };
+		2E4C7AA81C1292A000651F0F /* LibraryGalleryViewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C7AA71C1292A000651F0F /* LibraryGalleryViewCollectionViewController.swift */; };
+		2E4C7AAA1C13B16200651F0F /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4C7AA91C13B16200651F0F /* BookCollectionViewCell.swift */; };
 		2E808A251C0B5274001BC5D3 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A1F1C0B5274001BC5D3 /* Book+CoreDataProperties.swift */; };
 		2E808A261C0B5274001BC5D3 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A201C0B5274001BC5D3 /* Book.swift */; };
 		2E808A271C0B5274001BC5D3 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A211C0B5274001BC5D3 /* Category+CoreDataProperties.swift */; };
@@ -22,7 +24,6 @@
 		C309345B1C0762E1005A6263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30934591C0762E1005A6263 /* LaunchScreen.storyboard */; };
 		C30934631C07672D005A6263 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934621C07672D005A6263 /* AddBookViewController.swift */; };
 		C30934651C07674F005A6263 /* BookSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934641C07674F005A6263 /* BookSearchTableViewController.swift */; };
-		C30934671C076909005A6263 /* BookLibraryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */; };
 		C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */; };
 		C340065F1C13846E004502A4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C340065E1C13846E004502A4 /* NotificationCenter.framework */; };
 		C34006621C13846E004502A4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34006611C13846E004502A4 /* TodayViewController.swift */; };
@@ -70,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		2E4C7AA51C10D75A00651F0F /* LibrarySwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySwitchViewController.swift; sourceTree = "<group>"; };
+		2E4C7AA71C1292A000651F0F /* LibraryGalleryViewCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryGalleryViewCollectionViewController.swift; sourceTree = "<group>"; };
+		2E4C7AA91C13B16200651F0F /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E808A1F1C0B5274001BC5D3 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2E808A201C0B5274001BC5D3 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		2E808A211C0B5274001BC5D3 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -86,7 +89,6 @@
 		C309345C1C0762E1005A6263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C30934621C07672D005A6263 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		C30934641C07674F005A6263 /* BookSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchTableViewController.swift; sourceTree = "<group>"; };
-		C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLibraryCollectionViewController.swift; sourceTree = "<group>"; };
 		C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLibraryTableViewController.swift; sourceTree = "<group>"; };
 		C340065C1C13846E004502A4 /* Books Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Books Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C340065E1C13846E004502A4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -165,9 +167,10 @@
 				C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */,
 				C365790D1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift */,
 				C35E70621C10945F00798705 /* SettingsChooseLocationViewController.swift */,
+				2E4C7AA91C13B16200651F0F /* BookCollectionViewCell.swift */,
+				2E4C7AA71C1292A000651F0F /* LibraryGalleryViewCollectionViewController.swift */,
 				C3CD6D401C10902C00F714C6 /* SettingsTableViewController.swift */,
 				C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */,
-				C30934661C076909005A6263 /* BookLibraryCollectionViewController.swift */,
 				C30934641C07674F005A6263 /* BookSearchTableViewController.swift */,
 				C30934621C07672D005A6263 /* AddBookViewController.swift */,
 				C30934571C0762E1005A6263 /* Assets.xcassets */,
@@ -335,13 +338,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E808A261C0B5274001BC5D3 /* Book.swift in Sources */,
+				2E4C7AA81C1292A000651F0F /* LibraryGalleryViewCollectionViewController.swift in Sources */,
 				C3CD6D411C10902C00F714C6 /* SettingsTableViewController.swift in Sources */,
+				2E4C7AAA1C13B16200651F0F /* BookCollectionViewCell.swift in Sources */,
 				C308881C1C1362A6008B1DB5 /* ReadingQueueTableViewController.swift in Sources */,
 				2E808A291C0B5274001BC5D3 /* Author+CoreDataProperties.swift in Sources */,
 				2E808A281C0B5274001BC5D3 /* Category.swift in Sources */,
 				2E808A271C0B5274001BC5D3 /* Category+CoreDataProperties.swift in Sources */,
 				C35E70631C10945F00798705 /* SettingsChooseLocationViewController.swift in Sources */,
-				C30934671C076909005A6263 /* BookLibraryCollectionViewController.swift in Sources */,
 				C30934561C0762E1005A6263 /* Book.xcdatamodeld in Sources */,
 				C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */,
 				C36579101C109DED004E6E2F /* SettingsEditProfileViewController.swift in Sources */,
