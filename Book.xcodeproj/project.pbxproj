@@ -16,6 +16,7 @@
 		2E808A281C0B5274001BC5D3 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A221C0B5274001BC5D3 /* Category.swift */; };
 		2E808A291C0B5274001BC5D3 /* Author+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A231C0B5274001BC5D3 /* Author+CoreDataProperties.swift */; };
 		2E808A2A1C0B5274001BC5D3 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E808A241C0B5274001BC5D3 /* Author.swift */; };
+		C308881C1C1362A6008B1DB5 /* ReadingQueueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C308881B1C1362A6008B1DB5 /* ReadingQueueTableViewController.swift */; };
 		C309344E1C0762E1005A6263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C309344D1C0762E1005A6263 /* AppDelegate.swift */; };
 		C30934531C0762E1005A6263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C30934511C0762E1005A6263 /* Main.storyboard */; };
 		C30934561C0762E1005A6263 /* Book.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C30934541C0762E1005A6263 /* Book.xcdatamodeld */; };
@@ -24,6 +25,18 @@
 		C30934631C07672D005A6263 /* AddBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934621C07672D005A6263 /* AddBookViewController.swift */; };
 		C30934651C07674F005A6263 /* BookSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30934641C07674F005A6263 /* BookSearchTableViewController.swift */; };
 		C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */; };
+		C340065F1C13846E004502A4 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C340065E1C13846E004502A4 /* NotificationCenter.framework */; };
+		C34006621C13846E004502A4 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34006611C13846E004502A4 /* TodayViewController.swift */; };
+		C34006651C13846E004502A4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C34006631C13846E004502A4 /* MainInterface.storyboard */; };
+		C34006691C13846E004502A4 /* Books Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C340065C1C13846E004502A4 /* Books Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C3432AB81C131DD6002E8607 /* rainforest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3432AB61C131DD6002E8607 /* rainforest.mp3 */; };
+		C3432AB91C131DD6002E8607 /* coffee.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3432AB71C131DD6002E8607 /* coffee.mp3 */; };
+		C3432ABB1C131E26002E8607 /* thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C3432ABA1C131E26002E8607 /* thunder.mp3 */; };
+		C3432ABD1C131FEC002E8607 /* coffeeBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3432ABC1C131FEC002E8607 /* coffeeBackground.jpg */; };
+		C3432AC01C1322F9002E8607 /* thunderBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3432ABE1C1322F9002E8607 /* thunderBackground.jpg */; };
+		C3432AC11C1322F9002E8607 /* rainforestBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3432ABF1C1322F9002E8607 /* rainforestBackground.jpg */; };
+		C3432AC41C1330E5002E8607 /* pauseIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3432AC21C1330E5002E8607 /* pauseIcon.png */; };
+		C3432AC51C1330E5002E8607 /* playIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C3432AC31C1330E5002E8607 /* playIcon.png */; };
 		C35E70631C10945F00798705 /* SettingsChooseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35E70621C10945F00798705 /* SettingsChooseLocationViewController.swift */; };
 		C365790E1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365790D1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift */; };
 		C36579101C109DED004E6E2F /* SettingsEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */; };
@@ -31,6 +44,30 @@
 		C3CD6D541C1092AA00F714C6 /* User Female-100.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CD6D531C1092AA00F714C6 /* User Female-100.png */; };
 		C3CD6D571C10933A00F714C6 /* Literature-100.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CD6D561C10933A00F714C6 /* Literature-100.png */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C34006671C13846E004502A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C30934421C0762E1005A6263 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C340065B1C13846E004502A4;
+			remoteInfo = "Books Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C340066D1C13846E004502A4 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C34006691C13846E004502A4 /* Books Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2E4C7AA51C10D75A00651F0F /* LibrarySwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySwitchViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +79,7 @@
 		2E808A221C0B5274001BC5D3 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		2E808A231C0B5274001BC5D3 /* Author+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Author+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2E808A241C0B5274001BC5D3 /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		C308881B1C1362A6008B1DB5 /* ReadingQueueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingQueueTableViewController.swift; sourceTree = "<group>"; };
 		C309344A1C0762E1005A6263 /* Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Book.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C309344D1C0762E1005A6263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C30934521C0762E1005A6263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,6 +90,19 @@
 		C30934621C07672D005A6263 /* AddBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddBookViewController.swift; sourceTree = "<group>"; };
 		C30934641C07674F005A6263 /* BookSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookSearchTableViewController.swift; sourceTree = "<group>"; };
 		C323C3141C10069400BF9CC5 /* BookLibraryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookLibraryTableViewController.swift; sourceTree = "<group>"; };
+		C340065C1C13846E004502A4 /* Books Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Books Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C340065E1C13846E004502A4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		C34006611C13846E004502A4 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		C34006641C13846E004502A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C34006661C13846E004502A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3432AB61C131DD6002E8607 /* rainforest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rainforest.mp3; sourceTree = "<group>"; };
+		C3432AB71C131DD6002E8607 /* coffee.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coffee.mp3; sourceTree = "<group>"; };
+		C3432ABA1C131E26002E8607 /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thunder.mp3; sourceTree = "<group>"; };
+		C3432ABC1C131FEC002E8607 /* coffeeBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffeeBackground.jpg; sourceTree = "<group>"; };
+		C3432ABE1C1322F9002E8607 /* thunderBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thunderBackground.jpg; sourceTree = "<group>"; };
+		C3432ABF1C1322F9002E8607 /* rainforestBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainforestBackground.jpg; sourceTree = "<group>"; };
+		C3432AC21C1330E5002E8607 /* pauseIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseIcon.png; sourceTree = "<group>"; };
+		C3432AC31C1330E5002E8607 /* playIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playIcon.png; sourceTree = "<group>"; };
 		C35E70621C10945F00798705 /* SettingsChooseLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsChooseLocationViewController.swift; sourceTree = "<group>"; };
 		C365790D1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsMediaPlayerViewController.swift; sourceTree = "<group>"; };
 		C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsEditProfileViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +119,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C34006591C13846E004502A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C340065F1C13846E004502A4 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				C309344C1C0762E1005A6263 /* Book */,
+				C34006601C13846E004502A4 /* Books Widget */,
+				C340065D1C13846E004502A4 /* Frameworks */,
 				C309344B1C0762E1005A6263 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				C309344A1C0762E1005A6263 /* Book.app */,
+				C340065C1C13846E004502A4 /* Books Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +152,7 @@
 		C309344C1C0762E1005A6263 /* Book */ = {
 			isa = PBXGroup;
 			children = (
+				C3432AB31C131935002E8607 /* Sound Assets */,
 				C3CD6D551C1092AC00F714C6 /* Image Assets */,
 				2E808A1F1C0B5274001BC5D3 /* Book+CoreDataProperties.swift */,
 				2E808A201C0B5274001BC5D3 /* Book.swift */,
@@ -99,6 +162,7 @@
 				2E808A241C0B5274001BC5D3 /* Author.swift */,
 				C309344D1C0762E1005A6263 /* AppDelegate.swift */,
 				C30934511C0762E1005A6263 /* Main.storyboard */,
+				C308881B1C1362A6008B1DB5 /* ReadingQueueTableViewController.swift */,
 				2E4C7AA51C10D75A00651F0F /* LibrarySwitchViewController.swift */,
 				C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */,
 				C365790D1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift */,
@@ -117,9 +181,42 @@
 			path = Book;
 			sourceTree = "<group>";
 		};
+		C340065D1C13846E004502A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C340065E1C13846E004502A4 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C34006601C13846E004502A4 /* Books Widget */ = {
+			isa = PBXGroup;
+			children = (
+				C34006611C13846E004502A4 /* TodayViewController.swift */,
+				C34006631C13846E004502A4 /* MainInterface.storyboard */,
+				C34006661C13846E004502A4 /* Info.plist */,
+			);
+			path = "Books Widget";
+			sourceTree = "<group>";
+		};
+		C3432AB31C131935002E8607 /* Sound Assets */ = {
+			isa = PBXGroup;
+			children = (
+				C3432ABA1C131E26002E8607 /* thunder.mp3 */,
+				C3432AB61C131DD6002E8607 /* rainforest.mp3 */,
+				C3432AB71C131DD6002E8607 /* coffee.mp3 */,
+			);
+			name = "Sound Assets";
+			sourceTree = "<group>";
+		};
 		C3CD6D551C1092AC00F714C6 /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C3432AC21C1330E5002E8607 /* pauseIcon.png */,
+				C3432AC31C1330E5002E8607 /* playIcon.png */,
+				C3432ABE1C1322F9002E8607 /* thunderBackground.jpg */,
+				C3432ABF1C1322F9002E8607 /* rainforestBackground.jpg */,
+				C3432ABC1C131FEC002E8607 /* coffeeBackground.jpg */,
 				C3CD6D561C10933A00F714C6 /* Literature-100.png */,
 				C3CD6D531C1092AA00F714C6 /* User Female-100.png */,
 			);
@@ -136,15 +233,34 @@
 				C30934461C0762E1005A6263 /* Sources */,
 				C30934471C0762E1005A6263 /* Frameworks */,
 				C30934481C0762E1005A6263 /* Resources */,
+				C340066D1C13846E004502A4 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C34006681C13846E004502A4 /* PBXTargetDependency */,
 			);
 			name = Book;
 			productName = Book;
 			productReference = C309344A1C0762E1005A6263 /* Book.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C340065B1C13846E004502A4 /* Books Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C340066C1C13846E004502A4 /* Build configuration list for PBXNativeTarget "Books Widget" */;
+			buildPhases = (
+				C34006581C13846E004502A4 /* Sources */,
+				C34006591C13846E004502A4 /* Frameworks */,
+				C340065A1C13846E004502A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Books Widget";
+			productName = "Books Widget";
+			productReference = C340065C1C13846E004502A4 /* Books Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -157,6 +273,10 @@
 				ORGANIZATIONNAME = "Asad Khaliq";
 				TargetAttributes = {
 					C30934491C0762E1005A6263 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = KDS74D59Z7;
+					};
+					C340065B1C13846E004502A4 = {
 						CreatedOnToolsVersion = 7.1.1;
 						DevelopmentTeam = KDS74D59Z7;
 					};
@@ -176,6 +296,7 @@
 			projectRoot = "";
 			targets = (
 				C30934491C0762E1005A6263 /* Book */,
+				C340065B1C13846E004502A4 /* Books Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -185,11 +306,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3432AB91C131DD6002E8607 /* coffee.mp3 in Resources */,
 				C309345B1C0762E1005A6263 /* LaunchScreen.storyboard in Resources */,
 				C3CD6D541C1092AA00F714C6 /* User Female-100.png in Resources */,
+				C3432ABB1C131E26002E8607 /* thunder.mp3 in Resources */,
 				C30934581C0762E1005A6263 /* Assets.xcassets in Resources */,
+				C3432AC11C1322F9002E8607 /* rainforestBackground.jpg in Resources */,
+				C3432AB81C131DD6002E8607 /* rainforest.mp3 in Resources */,
+				C3432AC01C1322F9002E8607 /* thunderBackground.jpg in Resources */,
+				C3432AC51C1330E5002E8607 /* playIcon.png in Resources */,
 				C3CD6D571C10933A00F714C6 /* Literature-100.png in Resources */,
+				C3432ABD1C131FEC002E8607 /* coffeeBackground.jpg in Resources */,
 				C30934531C0762E1005A6263 /* Main.storyboard in Resources */,
+				C3432AC41C1330E5002E8607 /* pauseIcon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C340065A1C13846E004502A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34006651C13846E004502A4 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +341,7 @@
 				2E4C7AA81C1292A000651F0F /* LibraryGalleryViewCollectionViewController.swift in Sources */,
 				C3CD6D411C10902C00F714C6 /* SettingsTableViewController.swift in Sources */,
 				2E4C7AAA1C13B16200651F0F /* BookCollectionViewCell.swift in Sources */,
+				C308881C1C1362A6008B1DB5 /* ReadingQueueTableViewController.swift in Sources */,
 				2E808A291C0B5274001BC5D3 /* Author+CoreDataProperties.swift in Sources */,
 				2E808A281C0B5274001BC5D3 /* Category.swift in Sources */,
 				2E808A271C0B5274001BC5D3 /* Category+CoreDataProperties.swift in Sources */,
@@ -221,7 +359,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C34006581C13846E004502A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C34006621C13846E004502A4 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C34006681C13846E004502A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C340065B1C13846E004502A4 /* Books Widget */;
+			targetProxy = C34006671C13846E004502A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C30934511C0762E1005A6263 /* Main.storyboard */ = {
@@ -238,6 +392,14 @@
 				C309345A1C0762E1005A6263 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C34006631C13846E004502A4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C34006641C13846E004502A4 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -332,6 +494,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Book/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.akhaliq.Book;
@@ -346,11 +509,38 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Book/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.akhaliq.Book;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		C340066A1C13846E004502A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Books Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.stanford.cs193p.akhaliq.Book.Books-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C340066B1C13846E004502A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Books Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.stanford.cs193p.akhaliq.Book.Books-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -374,6 +564,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C340066C1C13846E004502A4 /* Build configuration list for PBXNativeTarget "Books Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C340066A1C13846E004502A4 /* Debug */,
+				C340066B1C13846E004502A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

@@ -23,6 +23,9 @@ class SettingsEditProfileViewController: UIViewController, UIImagePickerControll
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        profileImage.layer.masksToBounds = false
+        profileImage.layer.cornerRadius = profileImage.frame.height/2
+        profileImage.clipsToBounds = true
         // Do any additional setup after loading the view.
     }
 
@@ -33,14 +36,14 @@ class SettingsEditProfileViewController: UIViewController, UIImagePickerControll
     
 
     @IBAction func changeProfileImageButton(sender: UIButton) {
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = .PhotoLibrary
         
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func takeProfileImageButton(sender: UIButton) {
-        imagePicker.allowsEditing = false
+        imagePicker.allowsEditing = true
         imagePicker.sourceType = .Camera
         
         presentViewController(imagePicker, animated: true, completion: nil)
@@ -49,11 +52,10 @@ class SettingsEditProfileViewController: UIViewController, UIImagePickerControll
     // MARK: - UIImagePickerControllerDelegate Methods
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo: [String: AnyObject]) {
-        if let pickedImage = didFinishPickingMediaWithInfo[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let pickedImage = didFinishPickingMediaWithInfo[UIImagePickerControllerEditedImage] as? UIImage {
             profileImage.contentMode = .ScaleAspectFit
             profileImage.image = pickedImage
         }
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
