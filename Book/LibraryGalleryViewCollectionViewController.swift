@@ -1,27 +1,41 @@
 //
-//  BookLibraryCollectionViewController.swift
+//  LibraryGalleryViewCollectionViewController.swift
 //  Book
 //
-//  Created by Asad Khaliq on 11/26/15.
+//  Created by Aditya Sarkar on 12/4/15.
 //  Copyright © 2015 Asad Khaliq. All rights reserved.
 //
 
 import UIKit
+import CoreData
 
-private let reuseIdentifier = "Cell"
-
-class BookLibraryCollectionViewController: UICollectionViewController {
+class LibraryGalleryViewCollectionViewController: UICollectionViewController {
     
+    private let reuseIdentifier = "BookCell"
+    
+    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    
+    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    var books = [Book]()
+    
+
     override func viewDidLoad() {
+        
+        books = Book.fetchAllBooks(managedObjectContext!)
         super.viewDidLoad()
+        self.collectionView?.backgroundColor = UIColor(red:0.91, green:0.91, blue:0.91, alpha:1.0)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        // Register cell classes
+//        self.collectionView!.registerClass(BookCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        books = Book.fetchAllBooks(managedObjectContext!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,21 +57,40 @@ class BookLibraryCollectionViewController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return books.count
+    }
+    
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            
+            return CGSize(width: self.view.bounds.width * 0.45, height: self.view.bounds.width * 0.45 * 1.6 * 1.25)
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("BookCell", forIndexPath: indexPath) as! BookCollectionViewCell
+        
+        let book = books[indexPath.row]
+        cell.populateCell(book, viewWidth: self.view.bounds.width * 0.45)
+//        cell.backgroundColor = UIColor(red: 136, green: 136, blue: 136, alpha: 1)
+        cell.backgroundColor = UIColor(red:0.91, green:0.91, blue:0.91, alpha:1.0)
+        
+        return cell
     
         // Configure the cell
+
+    }
     
-        return cell
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return UIEdgeInsets(top: 10.0, left: self.view.bounds.width * 0.025, bottom: 10.0, right: self.view.bounds.width * 0.025)
     }
 
     // MARK: UICollectionViewDelegate
