@@ -365,6 +365,7 @@
                                     <outlet property="bookAuthor" destination="1Wk-cD-SRW" id="EF9-Fh-Q3R"/>
                                     <outlet property="bookCover" destination="x0d-6f-Iwy" id="hSK-WE-FNp"/>
                                     <outlet property="bookTitle" destination="8BK-5T-vVt" id="k0b-wf-pay"/>
+                                    <segue destination="db9-CA-xxn" kind="show" identifier="collectionDataSegue" id="kgG-9n-WIs"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -1297,6 +1298,7 @@
         <!--Item-->
         <scene sceneID="EHd-nD-KWo">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o4C-BI-bA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="avy-qs-rSy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="BbI-sd-mkO"/>
                     <toolbarItems/>
@@ -1310,7 +1312,6 @@
                         <segue destination="Drd-04-scR" kind="relationship" relationship="rootViewController" id="Dgp-Fg-1GP"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o4C-BI-bA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="837" y="956"/>
         </scene>
@@ -1322,6 +1323,6 @@
         <image name="thunderBackground.jpg" width="950" height="1195"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NJI-wc-Zfs"/>
+        <segue reference="kgG-9n-WIs"/>
     </inferredMetricsTieBreakers>
 </document>

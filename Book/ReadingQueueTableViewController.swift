@@ -75,6 +75,33 @@ class ReadingQueueTableViewController: UITableViewController {
         return cell!
     }
 
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+        
+        let isQueued = (queuedBooks[indexPath.row]).isQueued
+        var title = "Queue"
+        if (isQueued == true) { title = "Dequeue" }
+        
+        let queue = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: title , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            self.tableView.beginUpdates()
+            if (isQueued == false) {
+                Book.queueBook(self.managedObjectContext!, book: self.queuedBooks[indexPath.row])
+            } else {
+                Book.dequeueBook(self.managedObjectContext!, book: self.queuedBooks[indexPath.row])
+            }
+            self.tableView.setEditing(false, animated: true)
+            self.loadQueuedBooks()
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            self.tableView.endUpdates()
+        })
+        queue.backgroundColor = UIColor.greenColor()
+        
+        return [queue]
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -119,8 +146,6 @@ class ReadingQueueTableViewController: UITableViewController {
                     if let seguedToMVC = segue.destinationViewController as? AboutBookPageViewController {
                         let bookSelected = queuedBooks[path.row]
                         seguedToMVC.BookObject = bookSelected
-                        print("sent!")
-                        print("book: \(bookSelected)")
                     }
                 }
             }
