@@ -17,6 +17,7 @@ class BookLibraryTableViewController: UITableViewController {
     var selectedBook : Book? = nil
     
     override func viewDidLoad() {
+        updateAllBooks()
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
@@ -26,7 +27,12 @@ class BookLibraryTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        Book.queueBook(managedObjectContext!, book: allBooks[indexPath.row])
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        updateAllBooks()
         tableView.reloadData()
     }
     
@@ -42,7 +48,7 @@ class BookLibraryTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Book.fetchAllBooks(managedObjectContext!).count
+        return allBooks.count
         
     }
     
@@ -51,8 +57,8 @@ class BookLibraryTableViewController: UITableViewController {
         
         let indexInt : Int = indexPath.row
         
-        cell.textLabel!.text = (Book.fetchAllBooks(managedObjectContext!))[indexInt].title
-        cell.detailTextLabel!.text = (Book.fetchAllBooks(managedObjectContext!))[indexInt].author!.name
+        cell.textLabel!.text = allBooks[indexInt].title
+        cell.detailTextLabel!.text = allBooks[indexInt].author!.name
         
         return cell
     }
@@ -60,6 +66,10 @@ class BookLibraryTableViewController: UITableViewController {
     override func tableView(tableView: UITableView,
         canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
             return true
+    }
+    
+    func updateAllBooks() {
+        allBooks = Book.fetchAllBooks(managedObjectContext!)
     }
     
     override func tableView(tableView: UITableView,
@@ -71,17 +81,14 @@ class BookLibraryTableViewController: UITableViewController {
                 
                 tableView.beginUpdates()
                 
-                let bookToRemove = (Book.fetchAllBooks(managedObjectContext!))[indexPath.row]
-                managedObjectContext!.deleteObject(bookToRemove)
+                let bookToRemove = allBooks[indexPath.row]
                 
-                do {
-                    try managedObjectContext!.save()
-                } catch let error as NSError {
-                    print("Could not save: \(error)")
+                if (Book.deleteBook(managedObjectContext!, book: bookToRemove)) {
+                    updateAllBooks()
+                    print("goesInHere")
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                    tableView.endUpdates()
                 }
-                
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                tableView.endUpdates()
             }
     }
     

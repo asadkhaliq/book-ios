@@ -15,8 +15,6 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bookAuthor: UILabel!
     
     func populateCell(item: Book, viewWidth: CGFloat) {
-        print(item.title)
-        print(item.author?.name)
         bookTitle.text = item.title
         bookAuthor.text = item.author?.name
         
@@ -35,7 +33,6 @@ class BookCollectionViewCell: UICollectionViewCell {
             }
         }
         print("Widht")
-        print(self.bookCover.bounds)
         
         
     }

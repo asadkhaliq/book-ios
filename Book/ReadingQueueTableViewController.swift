@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class ReadingQueueTableViewController: UITableViewController {
 
+    
+    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    
+    var queuedBooks = [Book]()
+    
     override func viewDidLoad() {
+        loadQueuedBooks()
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -18,6 +25,15 @@ class ReadingQueueTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        loadQueuedBooks()
+        tableView.reloadData()
+    }
+    
+    func loadQueuedBooks() {
+        queuedBooks = Book.fetchAllQueuedBooks(managedObjectContext!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +45,35 @@ class ReadingQueueTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        Book.dequeueBook(managedObjectContext!, book: queuedBooks[indexPath.row])
+        
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 300.00
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return queuedBooks.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("queueCell", forIndexPath: indexPath) as? QueueTableViewCell
 
-        // Configure the cell...
+        let indexInt : Int = indexPath.row
+        
+        cell!.fillCell(queuedBooks[indexInt])
+       
 
-        return cell
+        return cell!
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

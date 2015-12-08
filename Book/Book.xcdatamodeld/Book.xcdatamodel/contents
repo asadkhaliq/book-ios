@@ -12,6 +12,7 @@
         <attribute name="dateCompleted" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dateStarted" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="isbn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isQueued" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="pages" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="priority" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
@@ -25,7 +26,7 @@
     </entity>
     <elements>
         <element name="Author" positionX="216" positionY="584" width="128" height="73"/>
-        <element name="Book" positionX="-72" positionY="333" width="128" height="240"/>
+        <element name="Book" positionX="-72" positionY="333" width="128" height="255"/>
         <element name="Category" positionX="243" positionY="144" width="128" height="73"/>
     </elements>
 </model>
