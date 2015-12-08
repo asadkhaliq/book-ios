@@ -10,8 +10,6 @@ import UIKit
 
 class AboutBookPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    // REMOVE COMMENTS FROM THIS PAGE THEY ARE FROM STACK OVERFLOW, MUST CITE
-    
     var BookObject : Book?
     
     var index = 0
@@ -30,16 +28,27 @@ class AboutBookPageViewController: UIPageViewController, UIPageViewControllerDat
         if index == 0 {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainBookController") as! AboutBookMainViewController
             vc.bookName = (BookObject?.title)!
+            vc.authorName = (BookObject?.author!.name)!
             return vc
         }
         
         if index == 1 {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("BiographyBookController") as! AboutBookBiographyViewController
+            vc.titleName = (BookObject?.title)!
+            vc.authorName = (BookObject?.author!.name)!
+            vc.pagesNumber = (String(BookObject?.pages!))
+            vc.dateString = (String(BookObject?.dateAdded!))
+            vc.summaryString = "Could not load summary from Amazon.com!"
             return vc
         }
         
         if index == 2 {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("NotesBookController") as! AboutBookNotesViewController
+            vc.dateString = (String(BookObject?.dateAdded!))
+            vc.titleName = (BookObject?.title)!
+            vc.reasonString = (BookObject?.reason)!
+            vc.notesString = "Sorry, no notes have been input!"
+
             return vc
         }
         
@@ -50,41 +59,22 @@ class AboutBookPageViewController: UIPageViewController, UIPageViewControllerDat
         
         return nil
     }
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        
-        let identifier = viewController.restorationIdentifier
-        let index = self.identifiers.indexOfObject(identifier!)
-        
-        //if the index is the end of the array, return nil since we dont want a view controller after the last one
-        if index == identifiers.count - 1 {
-            
-            return nil
-        }
-        
-        //increment the index to get the viewController after the current index
-        self.index = self.index + 1
-        return self.viewControllerAtIndex(self.index)
-        
-    }
+    
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        
         let identifier = viewController.restorationIdentifier
-        let index = self.identifiers.indexOfObject(identifier!)
-        
-        //if the index is 0, return nil since we dont want a view controller before the first one
-        if index == 0 {
-            
-            return nil
-        }
-        
-        //decrement the index to get the viewController before the current one
-        self.index = self.index - 1
-        return self.viewControllerAtIndex(self.index)
-        
+        let currentIndex = identifiers.indexOfObject(identifier!)
+        let previousIndex = abs((currentIndex - 1) % identifiers.count)
+        return viewControllerAtIndex(previousIndex)
     }
     
-    
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        let identifier = viewController.restorationIdentifier
+        let currentIndex = identifiers.indexOfObject(identifier!)
+        let previousIndex = abs((currentIndex + 1) % identifiers.count)
+        return viewControllerAtIndex(previousIndex)
+    }
+
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return self.identifiers.count
     }

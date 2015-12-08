@@ -124,5 +124,19 @@ class LibraryGalleryViewCollectionViewController: UICollectionViewController {
     
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == "collectionDataSegue" {
+                if let path = self.collectionView?.indexPathForCell(sender as! BookCollectionViewCell) {
+                    if let seguedToMVC = segue.destinationViewController as? AboutBookPageViewController {
+                        let bookSelected = self.books[path.row]
+                        seguedToMVC.BookObject = bookSelected
+                    }
+                }
+            }
+        }
+    }
+
 
 }

@@ -133,8 +133,6 @@ class BookLibraryTableViewController: UITableViewController {
                     if let seguedToMVC = segue.destinationViewController as? AboutBookPageViewController {
                         let bookSelected = self.allBooks[path.row]
                         seguedToMVC.BookObject = bookSelected
-                        print("sent!")
-                        print("book: \(bookSelected)")
                     }
                 }
             }
