@@ -28,7 +28,7 @@ class BookLibraryTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        Book.queueBook(managedObjectContext!, book: allBooks[indexPath.row])
+//        Book.queueBook(managedObjectContext!, book: allBooks[indexPath.row])
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -58,7 +58,7 @@ class BookLibraryTableViewController: UITableViewController {
         let indexInt : Int = indexPath.row
         
         cell.textLabel!.text = allBooks[indexInt].title
-        cell.detailTextLabel!.text = allBooks[indexInt].author!.name
+        cell.detailTextLabel?.text = allBooks[indexInt].author!.name
         
         return cell
     }
@@ -72,24 +72,42 @@ class BookLibraryTableViewController: UITableViewController {
         allBooks = Book.fetchAllBooks(managedObjectContext!)
     }
     
-    override func tableView(tableView: UITableView,
-        commitEditingStyle
-        editingStyle: UITableViewCellEditingStyle,
-        forRowAtIndexPath indexPath: NSIndexPath) {
-            
-            if editingStyle == UITableViewCellEditingStyle.Delete {
-                
-                tableView.beginUpdates()
-                
-                let bookToRemove = allBooks[indexPath.row]
-                
-                if (Book.deleteBook(managedObjectContext!, book: bookToRemove)) {
-                    updateAllBooks()
-                    print("goesInHere")
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                    tableView.endUpdates()
-                }
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+        
+        let delete = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            tableView.beginUpdates()
+
+            let bookToRemove = self.allBooks[indexPath.row]
+
+            if (Book.deleteBook(self.managedObjectContext!, book: bookToRemove)) {
+                self.updateAllBooks()
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                tableView.endUpdates()
             }
+        })
+        delete.backgroundColor = UIColor.redColor()
+        
+        let isQueued = (allBooks[indexPath.row]).isQueued
+        var title = "Queue"
+        if (isQueued == true) { title = "Dequeue" }
+        
+        let queue = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: title , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            self.tableView.beginUpdates()
+            if (isQueued == false) {
+                Book.queueBook(self.managedObjectContext!, book: self.allBooks[indexPath.row])
+            } else {
+                Book.dequeueBook(self.managedObjectContext!, book: self.allBooks[indexPath.row])
+            }
+            self.tableView.setEditing(false, animated: true)
+            self.tableView.endUpdates()
+        })
+        queue.backgroundColor = UIColor.greenColor()
+        
+        return [delete, queue]
     }
     
     /*
