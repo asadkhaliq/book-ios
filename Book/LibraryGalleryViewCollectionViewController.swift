@@ -36,6 +36,7 @@ class LibraryGalleryViewCollectionViewController: UICollectionViewController {
     
     override func viewDidAppear(animated: Bool) {
         books = Book.fetchAllBooks(managedObjectContext!)
+        collectionView?.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

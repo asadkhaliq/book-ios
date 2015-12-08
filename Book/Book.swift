@@ -27,6 +27,7 @@ class Book: NSManagedObject {
             book.dateCompleted = nil
             book.category = Category.getCategoryFromString(category, context: context)
             book.author = Author.getAuthorFromString(author, context: context)
+            book.isQueued = false
             
             do {
                 try context.save()
@@ -42,10 +43,79 @@ class Book: NSManagedObject {
         
     }
     
+    class func queueBook(context: NSManagedObjectContext, book: Book) -> Bool {
+        
+        book.isQueued = true
+        print("q called")
+//        
+//        let predicate = NSPredicate(format: "SELF = %@", book.objectID)
+//       
+//        
+//        let fetchRequest = NSFetchRequest(entityName: "Book")
+//        fetchRequest.predicate = predicate
+//        
+//        do {
+//            print(fetchAllBooks(context))
+//            let fetchedEntities = try context.executeFetchRequest(fetchRequest) as! [Book]
+//            fetchedEntities.first?.isQueued = true
+//            print(fetchAllBooks(context))
+//            // ... Update additional properties with new values
+//        } catch {
+//            // Do something in response to error condition
+//        }
+        
+//        return true
+        
+        do {
+            try context.save()
+            return true
+        } catch {
+            return false
+        }
+    
+        
+    }
+    
+    class func dequeueBook(context: NSManagedObjectContext, book: Book) -> Bool {
+        book.isQueued = false
+        do {
+            try context.save()
+            return true
+        } catch let error {
+            print("Core Data Error: \(error)")
+            return false
+        }
+        
+    }
+    
+    class func deleteBook(context: NSManagedObjectContext, book: Book) -> Bool {
+        context.deleteObject(book)
+        print("Goes to Delete")
+        do {
+            try context.save()
+            return true
+        } catch let error {
+            print("Core Data Error: \(error)")
+            return false
+        }
+    }
+    
     class func fetchAllBooks(context: NSManagedObjectContext) -> [Book] {
         let request = NSFetchRequest(entityName: "Book")
         
         if let books = (try? context.executeFetchRequest(request)) as? [Book] {
+            return books
+        } else {
+            return []
+        }
+    }
+    
+    class func fetchAllQueuedBooks(context: NSManagedObjectContext) -> [Book] {
+        let request = NSFetchRequest(entityName: "Book")
+        request.predicate = NSPredicate(format: "isQueued = %@", true)
+        
+        if let books = (try? context.executeFetchRequest(request)) as? [Book] {
+            print("fetchCalled")
             return books
         } else {
             return []
