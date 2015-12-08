@@ -10,8 +10,27 @@ import UIKit
 
 class AboutBookBiographyViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var pagesLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
+    var titleName: String = ""
+    var authorName: String = ""
+    var pagesNumber: String = ""
+    var dateString: String = ""
+    var summaryString: String = ""
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        titleLabel.text? = titleName
+        authorLabel.text? = authorName
+        pagesLabel.text? = pagesNumber
+        dateLabel.text? = dateString
+        summaryLabel.text? = summaryString
 
         // Do any additional setup after loading the view.
     }

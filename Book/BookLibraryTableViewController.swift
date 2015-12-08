@@ -29,6 +29,7 @@ class BookLibraryTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 //        Book.queueBook(managedObjectContext!, book: allBooks[indexPath.row])
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -125,14 +126,20 @@ class BookLibraryTableViewController: UITableViewController {
     }
     */
     
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            if identifier == "bookDetail" {
+                if let path = self.tableView?.indexPathForCell(sender as! UITableViewCell) {
+                    if let seguedToMVC = segue.destinationViewController as? AboutBookPageViewController {
+                        let bookSelected = self.allBooks[path.row]
+                        seguedToMVC.BookObject = bookSelected
+                        print("sent!")
+                        print("book: \(bookSelected)")
+                    }
+                }
+            }
+        }
     }
-    */
+
     
 }

@@ -12,11 +12,11 @@ class AboutBookPageViewController: UIPageViewController, UIPageViewControllerDat
     
     // REMOVE COMMENTS FROM THIS PAGE THEY ARE FROM STACK OVERFLOW, MUST CITE
     
+    var BookObject : Book?
     
     var index = 0
     var identifiers: NSArray = ["MainBookController", "BiographyBookController", "NotesBookController", "BookMapController"]
     override func viewDidLoad() {
-        
         self.dataSource = self
         self.delegate = self
         
@@ -27,27 +27,25 @@ class AboutBookPageViewController: UIPageViewController, UIPageViewControllerDat
     
     func viewControllerAtIndex(index: Int) -> UIViewController! {
         
-        //first view controller = firstViewControllers navigation controller
         if index == 0 {
-            
-            return self.storyboard!.instantiateViewControllerWithIdentifier("MainBookController") as! AboutBookMainViewController
-            
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainBookController") as! AboutBookMainViewController
+            vc.bookName = (BookObject?.title)!
+            return vc
         }
         
-        //second view controller = secondViewController's navigation controller
         if index == 1 {
-            
-            return self.storyboard!.instantiateViewControllerWithIdentifier("BiographyBookController") as! AboutBookBiographyViewController
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("BiographyBookController") as! AboutBookBiographyViewController
+            return vc
         }
         
         if index == 2 {
-            
-            return self.storyboard!.instantiateViewControllerWithIdentifier("NotesBookController") as! AboutBookNotesViewController
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("NotesBookController") as! AboutBookNotesViewController
+            return vc
         }
         
         if index == 3 {
-            
-            return self.storyboard!.instantiateViewControllerWithIdentifier("BookMapController") as! AboutBookMapViewController
+            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("BookMapController") as! AboutBookMapViewController
+            return vc
         }
         
         return nil

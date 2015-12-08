@@ -10,20 +10,17 @@ import UIKit
 
 class AboutBookMainViewController: UIViewController {
     
-    var itemIndex: Int = 0 // ***
-    var labelText: String = "" {
-        didSet {
-            
-            mainLabel.text = labelText
-        }
-    }
+    var bookName: String = ""
+    var authorName: String = ""
     
     @IBOutlet weak var mainLabel: UILabel!
-    
+    @IBOutlet weak var authorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        mainLabel.text? = bookName
+        authorLabel.text? = authorName
+
         // Do any additional setup after loading the view.
     }
     
