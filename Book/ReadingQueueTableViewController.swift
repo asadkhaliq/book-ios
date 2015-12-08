@@ -49,7 +49,8 @@ class ReadingQueueTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        Book.dequeueBook(managedObjectContext!, book: queuedBooks[indexPath.row])
+        //Book.dequeueBook(managedObjectContext!, book: queuedBooks[indexPath.row])
+//        performSegueWithIdentifier("detailFromQueue", sender: self)
         
     }
     
@@ -110,14 +111,20 @@ class ReadingQueueTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            if identifier == "detailFromQueue" {
+                if let path = self.tableView?.indexPathForCell(sender as! QueueTableViewCell) {
+                    if let seguedToMVC = segue.destinationViewController as? AboutBookPageViewController {
+                        let bookSelected = queuedBooks[path.row]
+                        seguedToMVC.BookObject = bookSelected
+                        print("sent!")
+                        print("book: \(bookSelected)")
+                    }
+                }
+            }
+        }
     }
-    */
 
 }

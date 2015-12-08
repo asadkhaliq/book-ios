@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gGG-2F-vT0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gGG-2F-vT0">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -127,6 +127,9 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <segue destination="db9-CA-xxn" kind="show" identifier="bookDetail" id="iip-MC-MGa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -140,7 +143,7 @@
             </objects>
             <point key="canvasLocation" x="1531" y="1724"/>
         </scene>
-        <!--Reading Queue Table View Controller-->
+        <!--Reading Queue-->
         <scene sceneID="wVc-Pm-xwd">
             <objects>
                 <tableViewController id="322-TG-dBY" customClass="ReadingQueueTableViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
@@ -228,6 +231,7 @@
                                 <connections>
                                     <outlet property="author" destination="9Wl-Ok-tq6" id="7Yu-WZ-TJr"/>
                                     <outlet property="title" destination="Fgn-rx-47Z" id="dQU-kj-W3z"/>
+                                    <segue destination="db9-CA-xxn" kind="show" identifier="detailFromQueue" id="NJI-wc-Zfs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -236,13 +240,13 @@
                             <outlet property="delegate" destination="322-TG-dBY" id="sai-uN-QQN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="TtS-bv-d3b"/>
+                    <navigationItem key="navigationItem" title="Reading Queue" id="TtS-bv-d3b"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fr5-0H-bV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2896" y="-722"/>
         </scene>
-        <!--Item-->
+        <!--Library-->
         <scene sceneID="eT3-df-9wL">
             <objects>
                 <viewController id="Drd-04-scR" customClass="LibrarySwitchViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
@@ -254,7 +258,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3F-cr-jvH">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3F-cr-jvH">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -282,14 +286,14 @@
                             <constraint firstItem="l3F-cr-jvH" firstAttribute="centerX" secondItem="Olk-rz-E3w" secondAttribute="centerX" id="ryK-mS-qrn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="BbI-sd-mkO"/>
+                    <navigationItem key="navigationItem" title="Library" id="TlB-Zk-Tok"/>
                     <connections>
                         <outlet property="containerView" destination="l3F-cr-jvH" id="lwg-LP-6cb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6yM-IS-Qc8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="837" y="956"/>
+            <point key="canvasLocation" x="1649" y="956"/>
         </scene>
         <!--Library Gallery View Collection View Controller-->
         <scene sceneID="eco-Ak-dSg">
@@ -317,7 +321,7 @@
                                             <rect key="frame" x="0.0" y="302" width="264" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x0d-6f-Iwy">
@@ -597,7 +601,7 @@
                                                     <rect key="frame" x="8" y="8" width="197" height="25"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -630,7 +634,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZLW-hS-sns" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3317" y="920"/>
+            <point key="canvasLocation" x="4129" y="920"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="jer-rA-l9S">
@@ -767,7 +771,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wff-nq-XUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4010" y="920"/>
+            <point key="canvasLocation" x="4822" y="920"/>
         </scene>
         <!--Reading Music-->
         <scene sceneID="tvM-EM-4ud">
@@ -934,14 +938,14 @@
                                         <rect key="frame" x="263" y="524" width="33.5" height="19.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q44-w8-fzk">
                                         <rect key="frame" x="254" y="543" width="51" height="20.5"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -968,6 +972,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authorLabel" destination="Q44-w8-fzk" id="iab-Uo-HOw"/>
                         <outlet property="mainLabel" destination="KFS-CL-Azf" id="Rwe-AM-QtZ"/>
                     </connections>
                 </viewController>
@@ -1000,14 +1005,14 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="52" height="21"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrI-dH-dsn">
                                                         <rect key="frame" x="0.0" y="21" width="52" height="21"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1020,14 +1025,14 @@
                                                         <rect key="frame" x="462" y="0.0" width="47" height="21"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Added" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbM-1Q-aIU">
                                                         <rect key="frame" x="418" y="21" width="91" height="21"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1040,7 +1045,7 @@
                                         <rect key="frame" x="0.0" y="41" width="560" height="523"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1056,6 +1061,13 @@
                             <constraint firstItem="hA1-JH-pHc" firstAttribute="top" secondItem="IwT-al-ldU" secondAttribute="bottom" constant="8" symbolic="YES" id="uBS-Sr-vCc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="TrI-dH-dsn" id="WvA-V6-vbZ"/>
+                        <outlet property="dateLabel" destination="mbM-1Q-aIU" id="DhS-w7-4p9"/>
+                        <outlet property="pagesLabel" destination="wNa-9Q-wwx" id="8As-mz-RYw"/>
+                        <outlet property="summaryLabel" destination="iwQ-Xi-LxL" id="NMa-Wj-5Yr"/>
+                        <outlet property="titleLabel" destination="yCW-f3-Hwp" id="PEd-lG-rE3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11T-5b-Ra8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1086,7 +1098,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="46" height="21"/>
                                                         <animations/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSr-4V-cLs">
@@ -1101,7 +1113,7 @@
                                                 <rect key="frame" x="46" y="0.0" width="514" height="51"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1125,7 +1137,7 @@
                                         <rect key="frame" x="0.0" y="544" width="560" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1141,6 +1153,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="6vf-i0-iYO" secondAttribute="trailing" id="y0w-tc-WZc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateAddedLabel" destination="Cyf-eL-z1S" id="4wT-23-2qD"/>
+                        <outlet property="markCompleteButton" destination="nSr-4V-cLs" id="h7b-UP-osZ"/>
+                        <outlet property="markCompleteButtonPressed" destination="nSr-4V-cLs" id="PTc-lp-bqF"/>
+                        <outlet property="notesText" destination="qpz-ib-EFI" id="LAV-iX-EbI"/>
+                        <outlet property="reasonsForReadingText" destination="RNn-2n-idJ" id="iJL-fr-h5f"/>
+                        <outlet property="titleLabel" destination="f1z-Ph-waV" id="GjR-eU-emM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qgn-bf-JkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1169,7 +1189,7 @@
                                         <rect key="frame" x="0.0" y="544" width="384" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1206,7 +1226,7 @@
                     <connections>
                         <segue destination="Cab-ui-jQU" kind="relationship" relationship="viewControllers" id="ihm-8F-wYK"/>
                         <segue destination="nML-34-ka7" kind="relationship" relationship="viewControllers" id="TSQ-bV-50h"/>
-                        <segue destination="Drd-04-scR" kind="relationship" relationship="viewControllers" id="s9X-xR-hWo"/>
+                        <segue destination="avy-qs-rSy" kind="relationship" relationship="viewControllers" id="s9X-xR-hWo"/>
                         <segue destination="x0A-oL-DrD" kind="relationship" relationship="viewControllers" id="9ww-CJ-Z7W"/>
                     </connections>
                 </tabBarController>
@@ -1232,7 +1252,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOE-7U-gSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477" y="920"/>
+            <point key="canvasLocation" x="3289" y="920"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dOJ-Lq-u0n">
@@ -1274,6 +1294,26 @@
             </objects>
             <point key="canvasLocation" x="2084" y="-722"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="EHd-nD-KWo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="avy-qs-rSy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="BbI-sd-mkO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VOc-qM-8EA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Drd-04-scR" kind="relationship" relationship="rootViewController" id="Dgp-Fg-1GP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o4C-BI-bA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="837" y="956"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Literature-100.png" width="100" height="100"/>
@@ -1281,4 +1321,7 @@
         <image name="playIcon.png" width="25" height="25"/>
         <image name="thunderBackground.jpg" width="950" height="1195"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="NJI-wc-Zfs"/>
+    </inferredMetricsTieBreakers>
 </document>
