@@ -29,6 +29,7 @@ class ReadingQueueTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         loadQueuedBooks()
+        tableView.reloadData()
     }
     
     func loadQueuedBooks() {

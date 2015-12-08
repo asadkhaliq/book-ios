@@ -14,6 +14,7 @@ class QueueTableViewCell: UITableViewCell {
     @IBOutlet weak var author: UILabel!
     
     func fillCell(book: Book) {
+        print("Goes into fill cell")
         title.text = book.title!
         author.text = book.author?.name
     }
