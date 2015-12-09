@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     var contactStore = CNContactStore()
+    
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(!NSUserDefaults.standardUserDefaults() .boolForKey("isNotificationScheduled")){
             createNotification()
         }
-        
+        //self.window?.tintColor = UIColor.greenColor()
         return true
     }
 

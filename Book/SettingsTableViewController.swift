@@ -54,8 +54,19 @@ class SettingsTableViewController: UITableViewController {
         }
     }
     
-    @IBAction func deleteAllBooks(sender: UIButton) {
-        Book.deleteAllBooks(managedObjectContext!)
+    override func tableView(tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            if indexPath.section == 3 && indexPath.row == 0 {
+                Book.addBook("Zero to One", withCover: "http://t1.gstatic.com/images?q=tbn:ANd9GcTI_ooZzjy49uuu0Shtt6mOlIxLIEZ4Qd5DRJgS7z9asXEoHP5J", withISBN: "No ISBN Found", numPages: 224, withPriority: "0", because: "An insightful look into the world of business", withCategory: "Entrepreneurship", writtenBy: "Peter Thiel", withContext: managedObjectContext!)
+                
+                Book.addBook("Lean In", withCover: "http://ecx.images-amazon.com/images/I/41i-ZAidwOL._SX286_BO1,204,203,200_.jpg", withISBN: "No ISBN Found", numPages: 240, withPriority: "2", because: "Important facts on women in business.", withCategory: "Gender", writtenBy: "Sheryl Sandberg", withContext: managedObjectContext!)
+
+                
+                Book.addBook("Meditations", withCover: "http://ecx.images-amazon.com/images/I/71dwCdjTA-L.jpg", withISBN: "No ISBN Found", numPages: 112, withPriority: "1", because: "Spiritual development.", withCategory: "Personal", writtenBy: "Marcus Aurelius", withContext: managedObjectContext!)
+       }
+            if indexPath.section == 3 && indexPath.row == 1 {
+                Book.deleteAllBooks(managedObjectContext!)
+            }
     }
     
 }

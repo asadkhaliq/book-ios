@@ -9,7 +9,7 @@
 import UIKit
 import Contacts
 
-class AddContactViewController: UIViewController {
+class AddContactViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -22,8 +22,16 @@ class AddContactViewController: UIViewController {
         super.viewDidLoad()
         firstNameField.text = "Yvonne"
         lastNameField.text = "Jacobson"
+        firstNameField.delegate = self
+        lastNameField.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
