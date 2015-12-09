@@ -16,10 +16,6 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
     
     private var userDefaults = NSUserDefaults.standardUserDefaults()
 
-    
-    // TODO: Annotate both current city and searched city
-    
-
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
 
@@ -27,7 +23,6 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
     @IBOutlet weak var enteredCityField: UITextField!
     
     
-    // for city search
     
     var annotation:MKAnnotation!
     var localSearchRequest:MKLocalSearchRequest!
@@ -37,7 +32,6 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
     var pointAnnotation:MKPointAnnotation!
     var pinAnnotationView:MKPinAnnotationView!
     
-    // end city search
     
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
@@ -77,25 +71,16 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
         geoCoder.reverseGeocodeLocation(location!)
             {
                 (placemarks, error) -> Void in
-                
                 let placeArray = placemarks as [CLPlacemark]!
-                
-                // Place details
                 var placeMark: CLPlacemark!
                 placeMark = placeArray?[0]
                 
-                
-                // City
                 if let city = placeMark.addressDictionary?["City"] as? NSString
                 {
                     self.cityName = city as String
                     self.detectedCityLabel.text = "Current Detected City:" + (city as String)
                 }
         }
-        
-        
-  
-        
     }
 
     
@@ -154,16 +139,5 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
         }
     }
     
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
