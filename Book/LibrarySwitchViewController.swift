@@ -20,7 +20,6 @@ class LibrarySwitchViewController: UIViewController {
         self.addSubview(self.currentViewController!.view, toView: self.containerView)
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func switchViewType(sender: UISegmentedControl) {
