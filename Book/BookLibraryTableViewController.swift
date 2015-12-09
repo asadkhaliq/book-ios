@@ -9,17 +9,37 @@
 import UIKit
 import CoreData
 
-class BookLibraryTableViewController: UITableViewController {
+class BookLibraryTableViewController: UITableViewController, UISearchResultsUpdating {
     
     var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var bookSearchController = UISearchController()
+
     
     var allBooks = [Book]()
+    var filteredBooks = [Book]()
     var selectedBook : Book? = nil
     
     override func viewDidLoad() {
         updateAllBooks()
         super.viewDidLoad()
         self.tableView.separatorStyle = .None
+        
+        self.bookSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.dimsBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            
+            self.tableView.tableHeaderView = controller.searchBar
+            
+            return controller
+        })()
+        
+        self.tableView.reloadData()
+        
+        
 
         
 
@@ -28,6 +48,21 @@ class BookLibraryTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController){
+        if(searchController.searchBar.text! != "") {
+            filteredBooks.removeAll(keepCapacity: false)
+        
+            let searchPredicate = NSPredicate(format: "title CONTAINS[c] %@ OR author.name CONTAINS[c] %@", searchController.searchBar.text!, searchController.searchBar.text!)
+            let array = (allBooks as NSArray).filteredArrayUsingPredicate(searchPredicate)
+            filteredBooks = array as! [Book]
+            self.tableView.reloadData()
+        } else {
+            filteredBooks = allBooks
+            print("goes into else")
+            self.tableView.reloadData()
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -52,7 +87,10 @@ class BookLibraryTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allBooks.count
+        if (self.bookSearchController.active) {
+            return filteredBooks.count
+        }
+        else {return allBooks.count}
         
     }
     
@@ -61,7 +99,12 @@ class BookLibraryTableViewController: UITableViewController {
         
         let indexInt : Int = indexPath.row
         
-        cell!.fillCell(allBooks[indexInt])
+        if (self.bookSearchController.active) {
+            cell!.fillCell(filteredBooks[indexInt])
+        }
+        else {cell!.fillCell(allBooks[indexInt])}
+        
+        
         return cell!
     }
     

@@ -21,7 +21,10 @@ class LibraryTableViewCell: UITableViewCell {
         authorLabel.text = book.author?.name
         pagesLabel.text = String(book.pages!) + "pages"
         
-        let priorityNumber = Int(book.priority!)!
+        var priorityNumber = 0
+        if book.priority != nil {
+            priorityNumber = Int(book.priority!)!
+        }
         
         switch priorityNumber {
         case 0: priorityIndicatorLabel.backgroundColor = UIColor.redColor()
