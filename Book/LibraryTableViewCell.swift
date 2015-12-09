@@ -19,7 +19,7 @@ class LibraryTableViewCell: UITableViewCell {
     func fillCell(book: Book) {
         titleLabel.text = book.title!
         authorLabel.text = book.author?.name
-        pagesLabel.text = String(book.pages!)
+        pagesLabel.text = String(book.pages!) + "pages"
         
         var priorityNumber = 0
         if book.priority != nil {
