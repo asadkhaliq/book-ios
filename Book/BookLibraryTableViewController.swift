@@ -19,6 +19,8 @@ class BookLibraryTableViewController: UITableViewController {
     override func viewDidLoad() {
         updateAllBooks()
         super.viewDidLoad()
+        self.tableView.separatorStyle = .None
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -53,15 +55,13 @@ class BookLibraryTableViewController: UITableViewController {
         
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("LibraryCell", forIndexPath: indexPath)
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> LibraryTableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("LibraryCell", forIndexPath: indexPath) as? LibraryTableViewCell
         
         let indexInt : Int = indexPath.row
         
-        cell.textLabel!.text = allBooks[indexInt].title
-        cell.detailTextLabel?.text = allBooks[indexInt].author!.name
-        
-        return cell
+        cell!.fillCell(allBooks[indexInt])
+        return cell!
     }
     
     override func tableView(tableView: UITableView,

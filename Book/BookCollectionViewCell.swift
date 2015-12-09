@@ -32,9 +32,6 @@ class BookCollectionViewCell: UICollectionViewCell {
                 }
             }
         }
-        print("Widht")
-        
-        
     }
     
     

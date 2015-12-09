@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class LibraryGalleryViewCollectionViewController: UICollectionViewController {
+class LibraryGalleryViewCollectionViewController: UICollectionViewController, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate {
     
     private let reuseIdentifier = "BookCell"
     
@@ -20,6 +20,12 @@ class LibraryGalleryViewCollectionViewController: UICollectionViewController {
     
 
     override func viewDidLoad() {
+        let lpgr = UILongPressGestureRecognizer(target: self, action: "handleLongPress:")
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delaysTouchesBegan = true
+        lpgr.delegate = self
+        self.collectionView!.addGestureRecognizer(lpgr)
+
         
         books = Book.fetchAllBooks(managedObjectContext!)
         super.viewDidLoad()
@@ -59,6 +65,11 @@ class LibraryGalleryViewCollectionViewController: UICollectionViewController {
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+    }
+    
+    func refreshCollection() {
+        self.viewDidLoad()
+       //self.viewDidAppear(false)
     }
 
 
@@ -124,6 +135,45 @@ class LibraryGalleryViewCollectionViewController: UICollectionViewController {
     
     }
     */
+
+    func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        if gestureReconizer.state != UIGestureRecognizerState.Ended {
+            return
+        }
+        
+        let p = gestureReconizer.locationInView(self.collectionView)
+        let indexPath = self.collectionView!.indexPathForItemAtPoint(p)
+        
+        if let index = indexPath {            
+            let popoverContent = (self.storyboard?.instantiateViewControllerWithIdentifier("PopoverController"))! as! PopoverSelectionViewController
+            popoverContent.indexPath = index
+            let nav = UINavigationController(rootViewController: popoverContent)
+            nav.modalPresentationStyle = UIModalPresentationStyle.Popover
+            let popover = nav.popoverPresentationController
+            popoverContent.preferredContentSize = CGSizeMake(140,60)
+            popover!.delegate = self
+            popover!.sourceView = self.view
+            let rect : CGRect = (collectionView?.layoutAttributesForItemAtIndexPath(indexPath!)!.frame)!
+            popover!.sourceRect = rect
+            
+            self.presentViewController(nav, animated: true, completion: nil)
+            
+          
+            } else {
+            print("Could not find index path")
+        }
+    }
+    
+
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        // Return no adaptive presentation style, use default presentation behaviour
+        return .None
+    }
+
+    func popoverPresentationControllerDidDismissPopover(popoverPresentationController: UIPopoverPresentationController) {
+        refreshCollection()
+    }
+   
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {

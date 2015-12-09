@@ -29,6 +29,7 @@ class AboutBookPageViewController: UIPageViewController, UIPageViewControllerDat
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("MainBookController") as! AboutBookMainViewController
             vc.bookName = (BookObject?.title)!
             vc.authorName = (BookObject?.author!.name)!
+            vc.coverURL = (BookObject?.coverUrl)!
             return vc
         }
         

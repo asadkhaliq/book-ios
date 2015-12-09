@@ -12,6 +12,11 @@ import CoreLocation
 
 class SettingsChooseLocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
+    var cityName : String?
+    
+    private var userDefaults = NSUserDefaults.standardUserDefaults()
+
+    
     // TODO: Annotate both current city and searched city
     
 
@@ -74,6 +79,7 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
                 // City
                 if let city = placeMark.addressDictionary?["City"] as? NSString
                 {
+                    self.cityName = city as String
                     self.detectedCityLabel.text = "Current Detected City:" + (city as String)
                 }
         }
@@ -84,6 +90,22 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
     }
 
     
+    @IBAction func setCityFinal(sender: AnyObject) {
+        if cityName != nil {
+            userDefaults.setObject(cityName, forKey: "cityname")
+            self.navigationController?.popViewControllerAnimated(true)
+
+        }
+        else {
+            let alertController = UIAlertController(title: nil, message: "No Location Set!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+
+        }
+
+    }
+    
+    
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
     {
         print("Errors: " + error.localizedDescription)
@@ -93,12 +115,11 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
     }
     
     @IBAction func setManuallySearchedCity(sender: UIButton) {
-        //1
         if self.mapView.annotations.count != 0{
             annotation = self.mapView.annotations[0]
             self.mapView.removeAnnotation(annotation)
         }
-        //2
+
         localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = enteredCityField.text
         localSearch = MKLocalSearch(request: localSearchRequest)
@@ -110,7 +131,7 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
                 self.presentViewController(alertController, animated: true, completion: nil)
                 return
             }
-            //3
+
             self.pointAnnotation = MKPointAnnotation()
             self.pointAnnotation.title = self.enteredCityField.text
             self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
@@ -119,14 +140,11 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
             self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
             self.mapView.centerCoordinate = self.pointAnnotation.coordinate
             self.mapView.addAnnotation(self.pinAnnotationView.annotation!)
+            
+            self.cityName = self.enteredCityField.text
         }
     }
     
-    
-    
-    // map view code from - https://www.veasoftware.com/tutorials/2015/7/25/map-view-current-location-in-swift-xcode-7-ios-9-tutorial
-    // city name code from - http://stackoverflow.com/questions/27735835/convert-coordinates-to-city-name
-    // city search code frmo - http://sweettutos.com/2015/04/24/swift-mapkit-tutorial-series-how-to-search-a-place-address-or-poi-in-the-map/
     
     
     /*

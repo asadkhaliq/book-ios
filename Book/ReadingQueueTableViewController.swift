@@ -10,7 +10,6 @@ import UIKit
 import CoreData
 
 class ReadingQueueTableViewController: UITableViewController {
-
     
     var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
     
@@ -55,7 +54,7 @@ class ReadingQueueTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 300.00
+        return 200
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,6 +70,7 @@ class ReadingQueueTableViewController: UITableViewController {
         
         cell!.fillCell(queuedBooks[indexInt])
        
+        
 
         return cell!
     }

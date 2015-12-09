@@ -21,6 +21,7 @@ class Book: NSManagedObject {
             book.reason = reason
             book.coverUrl = coverPhoto
             book.dateAdded = NSDate()
+            book.priority = priority
             book.completedItM8 = false
             book.dateStarted = nil
             book.currentPage = nil
