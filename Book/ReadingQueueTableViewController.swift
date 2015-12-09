@@ -12,7 +12,8 @@ import CoreData
 class ReadingQueueTableViewController: UITableViewController {
     
     var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
-    
+    private var userDefaults = NSUserDefaults.standardUserDefaults()
+
     var queuedBooks = [Book]()
     
     override func viewDidLoad() {
@@ -138,6 +139,22 @@ class ReadingQueueTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func shareClicked(sender: UIButton) {
+        let button = sender 
+        let view = button.superview!
+        let cell = view.superview!.superview!.superview!.superview! as! QueueTableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        
+        let bookName = self.queuedBooks[indexPath!.row].title
+        let textToShare = bookName! + " is an amazing read! Using the Queue app to help manage my reading schedule. It's amazing!"
+        if let myName = (userDefaults.stringForKey("firstname"))
+        {
+            let objectsToShare = [textToShare, myName]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            self.presentViewController(activityVC, animated: true, completion: nil)
+        }
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
