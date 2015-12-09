@@ -8,6 +8,7 @@
 
 import UIKit
 import Contacts
+import EventKit
 
 class AddContactViewController: UIViewController, UITextFieldDelegate {
     
@@ -16,7 +17,8 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var birthdayPicker: UIDatePicker!
     
-    
+    var savedEventId : String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +26,8 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
         lastNameField.text = "Jacobson"
         firstNameField.delegate = self
         lastNameField.delegate = self
-        // Do any additional setup after loading the view.
     }
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
         view.endEditing(true)
         super.touchesBegan(touches, withEvent: event)
     }
@@ -35,7 +35,23 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func addBirthdayPressed(sender: AnyObject) {
+        let eventStore = EKEventStore()
+        
+        let startDate = birthdayPicker.date
+        let endDate = startDate.dateByAddingTimeInterval(60*60*24)
+        
+        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+            eventStore.requestAccessToEntityType(.Event, completion: {
+                granted, error in
+                self.createEvent(eventStore, title: "Birthday!", startDate: startDate, endDate: endDate)
+            })
+        } else {
+            createEvent(eventStore, title: "Birthday!", startDate: startDate, endDate: endDate)
+        }
+
     }
     
     @IBAction func addContactPressed(sender: AnyObject) {
@@ -64,10 +80,29 @@ class AddContactViewController: UIViewController, UITextFieldDelegate {
             let alertController = UIAlertController(title: nil, message: "Unable to add!", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Whoops", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
-            
         }
     }
     
+    func createEvent(eventStore: EKEventStore, title: String, startDate: NSDate, endDate: NSDate) {
+        let event = EKEvent(eventStore: eventStore)
+        
+        event.title = title
+        event.startDate = startDate
+        event.endDate = endDate
+        event.calendar = eventStore.defaultCalendarForNewEvents
+        do {
+            try eventStore.saveEvent(event, span: .ThisEvent)
+            savedEventId = event.eventIdentifier
+            let alertController = UIAlertController(title: nil, message: "Birthday added!!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Yay", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        } catch {
+            let alertController = UIAlertController(title: nil, message: "Unable to add!", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Whoops", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+
     
     /*
     // MARK: - Navigation
