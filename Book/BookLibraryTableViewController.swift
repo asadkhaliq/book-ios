@@ -11,14 +11,14 @@ import CoreData
 
 class BookLibraryTableViewController: UITableViewController, UISearchResultsUpdating {
     
-    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
-    let searchController = UISearchController(searchResultsController: nil)
+    private var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    private let searchController = UISearchController(searchResultsController: nil)
     
-    var bookSearchController = UISearchController()
+    private var bookSearchController = UISearchController()
 
     
-    var allBooks = [Book]()
-    var filteredBooks = [Book]()
+    private var allBooks = [Book]()
+    private var filteredBooks = [Book]()
     var selectedBook : Book? = nil
     
     override func viewDidLoad() {

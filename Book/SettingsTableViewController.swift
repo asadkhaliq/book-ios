@@ -63,6 +63,16 @@ class SettingsTableViewController: UITableViewController {
 
                 
                 Book.addBook("Meditations", withCover: "http://ecx.images-amazon.com/images/I/71dwCdjTA-L.jpg", withISBN: "No ISBN Found", numPages: 112, withPriority: "1", because: "Spiritual development.", withCategory: "Personal", writtenBy: "Marcus Aurelius", withContext: managedObjectContext!)
+                
+                userDefaults.setObject("jdoe137", forKey: "username")
+                userDefaults.setObject("John", forKey: "firstname")
+                userDefaults.setObject("Doe", forKey: "lastname")
+                userDefaults.setObject("Budapest", forKey: "cityname")
+                
+                let image : UIImage = UIImage(named:"sample2.jpg")!
+                let dataImage : NSData = UIImagePNGRepresentation(image)!
+                userDefaults.setObject(dataImage, forKey: "profileimage")
+                self.viewDidAppear(true)
        }
             if indexPath.section == 3 && indexPath.row == 1 {
                 Book.deleteAllBooks(managedObjectContext!)

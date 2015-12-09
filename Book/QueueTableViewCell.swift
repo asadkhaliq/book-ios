@@ -14,6 +14,10 @@ class QueueTableViewCell: UITableViewCell {
     @IBOutlet weak var author: UILabel!
     @IBOutlet weak var coverPhoto: UIImageView!
     
+    
+    /*
+    * Fills in the cell with relevant infor and then also dispatches an async call to get the photo
+    */
     func fillCell(book: Book) {
         print("Goes into fill cell")
         title.text = book.title!

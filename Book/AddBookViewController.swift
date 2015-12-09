@@ -17,7 +17,7 @@ class AddBookViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var notesTextField: UITextField!
     @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     
-    var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
+    private var managedObjectContext: NSManagedObjectContext? = AppDelegate.managedObjectContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
