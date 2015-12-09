@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class SettingsChooseLocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
+class SettingsChooseLocationViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate {
     
     var cityName : String?
     
@@ -39,6 +39,13 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
     
     // end city search
     
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,6 +55,8 @@ class SettingsChooseLocationViewController: UIViewController, CLLocationManagerD
         self.locationManager.startUpdatingLocation()
         
         self.mapView.showsUserLocation = true
+        
+        enteredCityField.delegate = self
     }
 
 

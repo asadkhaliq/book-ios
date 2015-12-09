@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddBookViewController: UIViewController {
+class AddBookViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var authorTextField: UITextField!
@@ -21,13 +21,22 @@ class AddBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        titleTextField.delegate = self
+        authorTextField.delegate = self
+        pagesTextField.delegate = self
+        notesTextField.delegate = self
         
         
         // Do any additional setup after loading the view.
     }
 
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -13,7 +13,7 @@ class AboutBookPageViewController: UIPageViewController, UIPageViewControllerDat
     var BookObject : Book?
     
     var index = 0
-    var identifiers: NSArray = ["MainBookController", "BiographyBookController", "NotesBookController", "BookMapController"]
+    var identifiers: NSArray = ["MainBookController", "BiographyBookController", "NotesBookController"]
     override func viewDidLoad() {
         self.dataSource = self
         self.delegate = self
@@ -37,24 +37,27 @@ class AboutBookPageViewController: UIPageViewController, UIPageViewControllerDat
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("BiographyBookController") as! AboutBookBiographyViewController
             vc.titleName = (BookObject?.title)!
             vc.authorName = (BookObject?.author!.name)!
-            vc.pagesNumber = (String(BookObject?.pages!))
-            vc.dateString = (String(BookObject?.dateAdded!))
-            vc.summaryString = "Could not load summary from Amazon.com!"
+            let pages = BookObject?.pages!
+            vc.pagesNumber = String(pages!) + " pages"
+            let date = BookObject?.dateAdded
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = .MediumStyle
+            let string = dateFormatter.stringFromDate(date!)
+            vc.dateString = "Added " + string
+            vc.summaryString = "This sample book doesn't have a summary, or you've added a book that doesn't have a summary listed on Amazon or Google Books. Nonetheless, here is some text to show that this view works!"
             return vc
         }
         
         if index == 2 {
             let vc = self.storyboard!.instantiateViewControllerWithIdentifier("NotesBookController") as! AboutBookNotesViewController
-            vc.dateString = (String(BookObject?.dateAdded!))
+            let date = BookObject?.dateAdded
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = .MediumStyle
+            let string = dateFormatter.stringFromDate(date!)
+            vc.dateString = "Added " + string
             vc.titleName = (BookObject?.title)!
+            vc.BookObject = BookObject
             vc.reasonString = (BookObject?.reason)!
-            vc.notesString = "Sorry, no notes have been input!"
-
-            return vc
-        }
-        
-        if index == 3 {
-            let vc = self.storyboard!.instantiateViewControllerWithIdentifier("BookMapController") as! AboutBookMapViewController
             return vc
         }
         

@@ -66,7 +66,6 @@
 		C3F821471C16CD04008CEF8A /* AboutBookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F821461C16CD04008CEF8A /* AboutBookPageViewController.swift */; };
 		C3F821491C16D54A008CEF8A /* AboutBookBiographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F821481C16D54A008CEF8A /* AboutBookBiographyViewController.swift */; };
 		C3F8214B1C16E443008CEF8A /* AboutBookNotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8214A1C16E443008CEF8A /* AboutBookNotesViewController.swift */; };
-		C3F8214D1C16E828008CEF8A /* AboutBookMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8214C1C16E828008CEF8A /* AboutBookMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,7 +155,6 @@
 		C3F821461C16CD04008CEF8A /* AboutBookPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBookPageViewController.swift; sourceTree = "<group>"; };
 		C3F821481C16D54A008CEF8A /* AboutBookBiographyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBookBiographyViewController.swift; sourceTree = "<group>"; };
 		C3F8214A1C16E443008CEF8A /* AboutBookNotesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBookNotesViewController.swift; sourceTree = "<group>"; };
-		C3F8214C1C16E828008CEF8A /* AboutBookMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBookMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +218,6 @@
 				C3F821421C16C826008CEF8A /* AboutBookMainViewController.swift */,
 				C3F821481C16D54A008CEF8A /* AboutBookBiographyViewController.swift */,
 				C3F8214A1C16E443008CEF8A /* AboutBookNotesViewController.swift */,
-				C3F8214C1C16E828008CEF8A /* AboutBookMapViewController.swift */,
 				C308881B1C1362A6008B1DB5 /* ReadingQueueTableViewController.swift */,
 				2E4C7AA51C10D75A00651F0F /* LibrarySwitchViewController.swift */,
 				C365790F1C109DED004E6E2F /* SettingsEditProfileViewController.swift */,
@@ -425,7 +422,6 @@
 				C3F821471C16CD04008CEF8A /* AboutBookPageViewController.swift in Sources */,
 				2E4C7AA81C1292A000651F0F /* LibraryGalleryViewCollectionViewController.swift in Sources */,
 				C3F821431C16C826008CEF8A /* AboutBookMainViewController.swift in Sources */,
-				C3F8214D1C16E828008CEF8A /* AboutBookMapViewController.swift in Sources */,
 				C3E759A71C17B11C0096F394 /* LibraryTableViewCell.swift in Sources */,
 				C3CD6D411C10902C00F714C6 /* SettingsTableViewController.swift in Sources */,
 				C3F821491C16D54A008CEF8A /* AboutBookBiographyViewController.swift in Sources */,
@@ -596,6 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.akhaliq.Book;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -611,6 +608,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.stanford.cs193p.akhaliq.Book;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -624,6 +622,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.stanford.cs193p.akhaliq.Book.Books-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -637,6 +636,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.stanford.cs193p.akhaliq.Book.Books-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

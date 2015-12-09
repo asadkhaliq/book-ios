@@ -7,32 +7,43 @@
 //
 
 import UIKit
+import CoreData
 
-class AboutBookNotesViewController: UIViewController {
+class AboutBookNotesViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var dateAddedLabel: UILabel!
     @IBOutlet weak var markCompleteButton: UIButton!
     @IBOutlet weak var reasonsForReadingText: UITextView!
-    @IBOutlet weak var notesText: UITextView!
+    
+    var BookObject : Book?
     
     var dateString: String = ""
     var titleName: String = ""
     var reasonString: String = ""
-    var notesString: String = ""
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dateAddedLabel.text? = dateString
         reasonsForReadingText.text? = reasonString
-        notesText.text? = notesString
-
+        reasonsForReadingText.delegate = self
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        BookObject!.reason = reasonsForReadingText.text
     }
     
     @IBOutlet weak var markCompleteButtonPressed: UIButton!

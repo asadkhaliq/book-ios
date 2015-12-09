@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsEditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class SettingsEditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
     
     private var userDefaults = NSUserDefaults.standardUserDefaults()
 
@@ -20,15 +20,28 @@ class SettingsEditProfileViewController: UIViewController, UIImagePickerControll
     @IBOutlet weak var lastNameField: UITextField!
     
     let imagePicker = UIImagePickerController()
-
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
+        usernameField.delegate = self
+        firstNameField.delegate = self
+        lastNameField.delegate = self
+
+
     }
     
     override func viewDidAppear(animated: Bool) {
