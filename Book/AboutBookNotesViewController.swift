@@ -11,7 +11,6 @@ import UIKit
 class AboutBookNotesViewController: UIViewController {
 
     @IBOutlet weak var dateAddedLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var markCompleteButton: UIButton!
     @IBOutlet weak var reasonsForReadingText: UITextView!
     @IBOutlet weak var notesText: UITextView!
@@ -25,7 +24,6 @@ class AboutBookNotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         dateAddedLabel.text? = dateString
-        titleLabel.text? = titleName
         reasonsForReadingText.text? = reasonString
         notesText.text? = notesString
 

@@ -44,6 +44,24 @@
 		C3CD6D411C10902C00F714C6 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD6D401C10902C00F714C6 /* SettingsTableViewController.swift */; };
 		C3CD6D541C1092AA00F714C6 /* User Female-100.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CD6D531C1092AA00F714C6 /* User Female-100.png */; };
 		C3CD6D571C10933A00F714C6 /* Literature-100.png in Resources */ = {isa = PBXBuildFile; fileRef = C3CD6D561C10933A00F714C6 /* Literature-100.png */; };
+		C3E759A51C1790540096F394 /* PopoverSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E759A41C1790540096F394 /* PopoverSelectionViewController.swift */; };
+		C3E759A71C17B11C0096F394 /* LibraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E759A61C17B11C0096F394 /* LibraryTableViewCell.swift */; };
+		C3E759B21C17B8640096F394 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759A81C17B8640096F394 /* add.png */; };
+		C3E759B31C17B8640096F394 /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759A91C17B8640096F394 /* add@2x.png */; };
+		C3E759B41C17B8640096F394 /* library.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759AA1C17B8640096F394 /* library.png */; };
+		C3E759B51C17B8640096F394 /* library@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759AB1C17B8640096F394 /* library@2x.png */; };
+		C3E759B61C17B8640096F394 /* queue.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759AC1C17B8640096F394 /* queue.png */; };
+		C3E759B71C17B8640096F394 /* queue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759AD1C17B8640096F394 /* queue@2x.png */; };
+		C3E759B81C17B8640096F394 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759AE1C17B8640096F394 /* settings.png */; };
+		C3E759B91C17B8640096F394 /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759AF1C17B8640096F394 /* settings@2x.png */; };
+		C3E759BA1C17B8640096F394 /* social.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759B01C17B8640096F394 /* social.png */; };
+		C3E759BB1C17B8640096F394 /* social@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E759B11C17B8640096F394 /* social@2x.png */; };
+		C3E759BD1C17CD6B0096F394 /* WidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E759BC1C17CD6B0096F394 /* WidgetTableViewCell.swift */; };
+		C3E759C01C17D73C0096F394 /* sample2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3E759BE1C17D73C0096F394 /* sample2.jpg */; };
+		C3E759C11C17D73C0096F394 /* sample1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3E759BF1C17D73C0096F394 /* sample1.jpg */; };
+		C3E759C51C17D7DB0096F394 /* FriendsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E759C41C17D7DB0096F394 /* FriendsDetailTableViewController.swift */; };
+		C3E759C91C17DB480096F394 /* FriendsMainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E759C81C17DB480096F394 /* FriendsMainTableViewController.swift */; };
+		C3E759CB1C17DDC50096F394 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E759CA1C17DDC50096F394 /* AddContactViewController.swift */; };
 		C3F821431C16C826008CEF8A /* AboutBookMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F821421C16C826008CEF8A /* AboutBookMainViewController.swift */; };
 		C3F821471C16CD04008CEF8A /* AboutBookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F821461C16CD04008CEF8A /* AboutBookPageViewController.swift */; };
 		C3F821491C16D54A008CEF8A /* AboutBookBiographyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F821481C16D54A008CEF8A /* AboutBookBiographyViewController.swift */; };
@@ -116,6 +134,24 @@
 		C3CD6D401C10902C00F714C6 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		C3CD6D531C1092AA00F714C6 /* User Female-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "User Female-100.png"; sourceTree = "<group>"; };
 		C3CD6D561C10933A00F714C6 /* Literature-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Literature-100.png"; sourceTree = "<group>"; };
+		C3E759A41C1790540096F394 /* PopoverSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverSelectionViewController.swift; sourceTree = "<group>"; };
+		C3E759A61C17B11C0096F394 /* LibraryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryTableViewCell.swift; sourceTree = "<group>"; };
+		C3E759A81C17B8640096F394 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		C3E759A91C17B8640096F394 /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
+		C3E759AA1C17B8640096F394 /* library.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = library.png; sourceTree = "<group>"; };
+		C3E759AB1C17B8640096F394 /* library@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "library@2x.png"; sourceTree = "<group>"; };
+		C3E759AC1C17B8640096F394 /* queue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = queue.png; sourceTree = "<group>"; };
+		C3E759AD1C17B8640096F394 /* queue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "queue@2x.png"; sourceTree = "<group>"; };
+		C3E759AE1C17B8640096F394 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		C3E759AF1C17B8640096F394 /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		C3E759B01C17B8640096F394 /* social.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = social.png; sourceTree = "<group>"; };
+		C3E759B11C17B8640096F394 /* social@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "social@2x.png"; sourceTree = "<group>"; };
+		C3E759BC1C17CD6B0096F394 /* WidgetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetTableViewCell.swift; sourceTree = "<group>"; };
+		C3E759BE1C17D73C0096F394 /* sample2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample2.jpg; sourceTree = "<group>"; };
+		C3E759BF1C17D73C0096F394 /* sample1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample1.jpg; sourceTree = "<group>"; };
+		C3E759C41C17D7DB0096F394 /* FriendsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsDetailTableViewController.swift; sourceTree = "<group>"; };
+		C3E759C81C17DB480096F394 /* FriendsMainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsMainTableViewController.swift; sourceTree = "<group>"; };
+		C3E759CA1C17DDC50096F394 /* AddContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		C3F821421C16C826008CEF8A /* AboutBookMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBookMainViewController.swift; sourceTree = "<group>"; };
 		C3F821461C16CD04008CEF8A /* AboutBookPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBookPageViewController.swift; sourceTree = "<group>"; };
 		C3F821481C16D54A008CEF8A /* AboutBookBiographyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutBookBiographyViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +210,11 @@
 				2E808A241C0B5274001BC5D3 /* Author.swift */,
 				C309344D1C0762E1005A6263 /* AppDelegate.swift */,
 				C30934511C0762E1005A6263 /* Main.storyboard */,
+				C3E759CA1C17DDC50096F394 /* AddContactViewController.swift */,
+				C3E759C81C17DB480096F394 /* FriendsMainTableViewController.swift */,
+				C3E759C41C17D7DB0096F394 /* FriendsDetailTableViewController.swift */,
+				C3E759A61C17B11C0096F394 /* LibraryTableViewCell.swift */,
+				C3E759A41C1790540096F394 /* PopoverSelectionViewController.swift */,
 				2E4C7AAB1C142B5E00651F0F /* QueueTableViewCell.swift */,
 				C3F821461C16CD04008CEF8A /* AboutBookPageViewController.swift */,
 				C3F821421C16C826008CEF8A /* AboutBookMainViewController.swift */,
@@ -212,6 +253,7 @@
 			children = (
 				C34006611C13846E004502A4 /* TodayViewController.swift */,
 				C34006631C13846E004502A4 /* MainInterface.storyboard */,
+				C3E759BC1C17CD6B0096F394 /* WidgetTableViewCell.swift */,
 				C34006661C13846E004502A4 /* Info.plist */,
 			);
 			path = "Books Widget";
@@ -230,6 +272,18 @@
 		C3CD6D551C1092AC00F714C6 /* Image Assets */ = {
 			isa = PBXGroup;
 			children = (
+				C3E759BE1C17D73C0096F394 /* sample2.jpg */,
+				C3E759BF1C17D73C0096F394 /* sample1.jpg */,
+				C3E759A81C17B8640096F394 /* add.png */,
+				C3E759A91C17B8640096F394 /* add@2x.png */,
+				C3E759AA1C17B8640096F394 /* library.png */,
+				C3E759AB1C17B8640096F394 /* library@2x.png */,
+				C3E759AC1C17B8640096F394 /* queue.png */,
+				C3E759AD1C17B8640096F394 /* queue@2x.png */,
+				C3E759AE1C17B8640096F394 /* settings.png */,
+				C3E759AF1C17B8640096F394 /* settings@2x.png */,
+				C3E759B01C17B8640096F394 /* social.png */,
+				C3E759B11C17B8640096F394 /* social@2x.png */,
 				C3432AC21C1330E5002E8607 /* pauseIcon.png */,
 				C3432AC31C1330E5002E8607 /* playIcon.png */,
 				C3432ABE1C1322F9002E8607 /* thunderBackground.jpg */,
@@ -325,15 +379,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3432AB91C131DD6002E8607 /* coffee.mp3 in Resources */,
+				C3E759B51C17B8640096F394 /* library@2x.png in Resources */,
 				C309345B1C0762E1005A6263 /* LaunchScreen.storyboard in Resources */,
+				C3E759C11C17D73C0096F394 /* sample1.jpg in Resources */,
 				C3CD6D541C1092AA00F714C6 /* User Female-100.png in Resources */,
+				C3E759BA1C17B8640096F394 /* social.png in Resources */,
+				C3E759B41C17B8640096F394 /* library.png in Resources */,
+				C3E759B61C17B8640096F394 /* queue.png in Resources */,
 				C3432ABB1C131E26002E8607 /* thunder.mp3 in Resources */,
 				C30934581C0762E1005A6263 /* Assets.xcassets in Resources */,
 				C3432AC11C1322F9002E8607 /* rainforestBackground.jpg in Resources */,
 				C3432AB81C131DD6002E8607 /* rainforest.mp3 in Resources */,
+				C3E759BB1C17B8640096F394 /* social@2x.png in Resources */,
+				C3E759B71C17B8640096F394 /* queue@2x.png in Resources */,
+				C3E759B21C17B8640096F394 /* add.png in Resources */,
+				C3E759C01C17D73C0096F394 /* sample2.jpg in Resources */,
 				C3432AC01C1322F9002E8607 /* thunderBackground.jpg in Resources */,
 				C3432AC51C1330E5002E8607 /* playIcon.png in Resources */,
 				C3CD6D571C10933A00F714C6 /* Literature-100.png in Resources */,
+				C3E759B31C17B8640096F394 /* add@2x.png in Resources */,
+				C3E759B91C17B8640096F394 /* settings@2x.png in Resources */,
+				C3E759B81C17B8640096F394 /* settings.png in Resources */,
 				C3432ABD1C131FEC002E8607 /* coffeeBackground.jpg in Resources */,
 				C30934531C0762E1005A6263 /* Main.storyboard in Resources */,
 				C3432AC41C1330E5002E8607 /* pauseIcon.png in Resources */,
@@ -360,16 +426,21 @@
 				2E4C7AA81C1292A000651F0F /* LibraryGalleryViewCollectionViewController.swift in Sources */,
 				C3F821431C16C826008CEF8A /* AboutBookMainViewController.swift in Sources */,
 				C3F8214D1C16E828008CEF8A /* AboutBookMapViewController.swift in Sources */,
+				C3E759A71C17B11C0096F394 /* LibraryTableViewCell.swift in Sources */,
 				C3CD6D411C10902C00F714C6 /* SettingsTableViewController.swift in Sources */,
 				C3F821491C16D54A008CEF8A /* AboutBookBiographyViewController.swift in Sources */,
+				C3E759C51C17D7DB0096F394 /* FriendsDetailTableViewController.swift in Sources */,
 				2E4C7AAA1C13B16200651F0F /* BookCollectionViewCell.swift in Sources */,
 				C308881C1C1362A6008B1DB5 /* ReadingQueueTableViewController.swift in Sources */,
 				2E808A291C0B5274001BC5D3 /* Author+CoreDataProperties.swift in Sources */,
 				2E808A281C0B5274001BC5D3 /* Category.swift in Sources */,
 				2E808A271C0B5274001BC5D3 /* Category+CoreDataProperties.swift in Sources */,
 				C35E70631C10945F00798705 /* SettingsChooseLocationViewController.swift in Sources */,
+				C3E759CB1C17DDC50096F394 /* AddContactViewController.swift in Sources */,
+				C3E759A51C1790540096F394 /* PopoverSelectionViewController.swift in Sources */,
 				C30934561C0762E1005A6263 /* Book.xcdatamodeld in Sources */,
 				C323C3151C10069400BF9CC5 /* BookLibraryTableViewController.swift in Sources */,
+				C3E759C91C17DB480096F394 /* FriendsMainTableViewController.swift in Sources */,
 				C36579101C109DED004E6E2F /* SettingsEditProfileViewController.swift in Sources */,
 				C365790E1C109D2A004E6E2F /* SettingsMediaPlayerViewController.swift in Sources */,
 				2E4C7AA61C10D75A00651F0F /* LibrarySwitchViewController.swift in Sources */,
@@ -388,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C34006621C13846E004502A4 /* TodayViewController.swift in Sources */,
+				C3E759BD1C17CD6B0096F394 /* WidgetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

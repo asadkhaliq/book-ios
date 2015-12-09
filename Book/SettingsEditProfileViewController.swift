@@ -9,6 +9,9 @@
 import UIKit
 
 class SettingsEditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    private var userDefaults = NSUserDefaults.standardUserDefaults()
+
 
     @IBOutlet weak var profileImage: UIImageView!
     
@@ -26,7 +29,20 @@ class SettingsEditProfileViewController: UIViewController, UIImagePickerControll
         profileImage.layer.masksToBounds = false
         profileImage.layer.cornerRadius = profileImage.frame.height/2
         profileImage.clipsToBounds = true
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if (userDefaults.stringForKey("firstname") != nil) {
+            firstNameField.text? = userDefaults.stringForKey("firstname")!
+        }
+        if (userDefaults.stringForKey("lastname") != nil) {
+            lastNameField.text? = userDefaults.stringForKey("lastname")!
+        }
+        if (userDefaults.objectForKey("profileimage") != nil) {
+            let imageData = userDefaults.objectForKey("profileimage") as! NSData
+            let image : UIImage = UIImage(data: imageData)!
+            profileImage.image = image
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +71,9 @@ class SettingsEditProfileViewController: UIViewController, UIImagePickerControll
         if let pickedImage = didFinishPickingMediaWithInfo[UIImagePickerControllerEditedImage] as? UIImage {
             profileImage.contentMode = .ScaleAspectFit
             profileImage.image = pickedImage
+            let dataImage : NSData = UIImagePNGRepresentation(pickedImage)!
+            userDefaults.setObject(dataImage, forKey: "profileimage")
+
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -64,6 +83,15 @@ class SettingsEditProfileViewController: UIViewController, UIImagePickerControll
     }
     
     
+    @IBAction func doneButtonClicked(sender: AnyObject) {
+        userDefaults.setObject(usernameField.text, forKey: "username")
+        userDefaults.setObject(firstNameField.text, forKey: "firstname")
+        userDefaults.setObject(lastNameField.text, forKey: "lastname")
+        self.navigationController?.popViewControllerAnimated(true)
+        
+        
+
+    }
     
     /*
     // MARK: - Navigation

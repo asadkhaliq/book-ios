@@ -8,16 +8,40 @@
 
 import UIKit
 import CoreData
+import Contacts
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var contactStore = CNContactStore()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        
+        if(!NSUserDefaults.standardUserDefaults() .boolForKey("isNotificationScheduled")){
+            createNotification()
+        }
+        
         return true
+    }
+
+    
+    func createNotification() {
+        let notification = UILocalNotification()
+        notification.alertBody = "Now's the time to read for 30 minutes - get on it now!"
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.fireDate = NSDate()
+        notification.repeatInterval = NSCalendarUnit.Day
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        NSUserDefaults .standardUserDefaults() .setBool(true, forKey: "isNotificationScheduled")
+        NSUserDefaults .standardUserDefaults() .synchronize()
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -56,6 +80,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return ((UIApplication.sharedApplication().delegate) as? AppDelegate)?.managedObjectContext
     }
 
+    class func getAppDelegate() -> AppDelegate {
+        return UIApplication.sharedApplication().delegate as! AppDelegate
+    }
+    
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelURL = NSBundle.mainBundle().URLForResource("Book", withExtension: "momd")!
